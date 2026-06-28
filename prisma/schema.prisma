@@ -1,0 +1,198 @@
+// ENEM Study — schema Prisma
+// Banco padrão de desenvolvimento: SQLite (file:./dev.db).
+// Para produção com Postgres, troque o `provider` abaixo para "postgresql"
+// e defina DATABASE_URL (ver docker-compose.yml / .env.production.example).
+//
+// Observação: SQLite não tem tipo Json nativo. Todos os campos "Json" do
+// modelo conceitual são persistidos como String (JSON serializado) e
+// (de)serializados via lib/json.ts.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Usuário único (single-user). O seed cria "Enrico".
+model User {
+  id       String   @id @default(cuid())
+  nome     String
+  criadoEm DateTime @default(now())
+}
+
+/// Área do conhecimento: linguagens, humanas, matematica, natureza, redacao
+model Subject {
+  id    String @id @default(cuid())
+  slug  String @unique
+  nome  String
+  cor   String // hex p/ UI
+  ordem Int
+
+  topics    Topic[]
+  weekTasks WeekTask[]
+}
+
+/// Tópico de estudo, ex.: "Funções da linguagem"
+model Topic {
+  id        String  @id @default(cuid())
+  subjectId String
+  slug      String  @unique
+  titulo    String
+  descricao String?
+  ordem     Int
+
+  subject   Subject         @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  materials StudyMaterial[]
+  questions Question[]
+}
+
+/// Conteúdo teórico de um tópico (resumo próprio em markdown + links curados)
+model StudyMaterial {
+  id             String @id @default(cuid())
+  topicId        String
+  titulo         String
+  resumoMarkdown String
+  links          String @default("[]") // JSON: [{ titulo, url, fonte }]
+
+  topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+}
+
+/// Questão real do ENEM importada da enem.dev
+model Question {
+  id              String  @id @default(cuid())
+  year            Int
+  index           Int
+  discipline      String // value da enem.dev (ciencias-humanas, linguagens, ...)
+  language        String? // espanhol | ingles | null
+  contextMarkdown String? // enunciado (markdown, imagens reescritas p/ local)
+  comando         String? // alternativesIntroduction
+  alternativas    String  @default("[]") // JSON: [{ letter, text, file, isCorrect }]
+  correta         String? // letra A-E
+  arquivos        String  @default("[]") // JSON: [url/local]
+  comentario      String? // explicação (preenchível depois)
+  topicId         String?
+
+  topic Topic? @relation(fields: [topicId], references: [id], onDelete: SetNull)
+
+  @@unique([year, index, language])
+  @@index([discipline])
+  @@index([year])
+}
+
+enum ExamTipo {
+  PROVA_OFICIAL
+  SIMULADO_TEMATICO
+  POR_TOPICO
+}
+
+/// Prova montável: conjunto ordenado de questões
+model Exam {
+  id          String   @id @default(cuid())
+  slug        String?  @unique
+  titulo      String
+  descricao   String?
+  tipo        ExamTipo
+  year        Int?
+  questionIds String   @default("[]") // JSON: [questionId] na ordem
+  criadoEm    DateTime @default(now())
+
+  attempts Attempt[]
+}
+
+/// Semana do cronograma (1..19)
+model Week {
+  id         String   @id @default(cuid())
+  numero     Int      @unique
+  foco       String
+  dataInicio DateTime
+  dataFim    DateTime
+
+  tasks WeekTask[]
+}
+
+enum TaskTipo {
+  LER_MATERIAL
+  RESPONDER_EXAM
+  ESCREVER_REDACAO
+  LER_LIVRO
+  REVISAR
+}
+
+/// Tarefa de uma semana, ligada a um conteúdo executável
+model WeekTask {
+  id        String   @id @default(cuid())
+  weekId    String
+  subjectId String?
+  titulo    String
+  ordem     Int
+  tipo      TaskTipo
+  refType   String? // "StudyMaterial" | "Exam" | "Book" | "Redacao"
+  refId     String?
+
+  week    Week     @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  subject Subject? @relation(fields: [subjectId], references: [id], onDelete: SetNull)
+}
+
+/// Obra de literatura
+model Book {
+  id             String @id @default(cuid())
+  slug           String @unique
+  titulo         String
+  autor          String
+  prioridade     String // ALTA | MEDIA | BAIXA
+  escola         String?
+  temasRedacao   String @default("[]") // JSON: [string]
+  resumoMarkdown String
+  links          String @default("[]") // JSON: [{ titulo, url, fonte }]
+  ordem          Int    @default(0)
+}
+
+/// Tentativa de resolução de uma Exam
+model Attempt {
+  id           String    @id @default(cuid())
+  examId       String
+  iniciadoEm   DateTime  @default(now())
+  finalizadoEm DateTime?
+  respostas    String    @default("{}") // JSON: { questionId: "A" }
+  acertos      Int       @default(0)
+  total        Int       @default(0)
+  porArea      String    @default("{}") // JSON: { discipline: { acertos, total } }
+
+  exam Exam @relation(fields: [examId], references: [id], onDelete: Cascade)
+
+  @@index([examId])
+}
+
+/// Redação escrita pelo aluno
+model RedacaoEntry {
+  id            String   @id @default(cuid())
+  tema          String
+  textoMarkdown String
+  autoavaliacao String   @default("{}") // JSON: { c1..c5: 0-200 }
+  notaTotal     Int      @default(0)
+  criadoEm      DateTime @default(now())
+}
+
+/// Marcação genérica de conclusão
+model Progress {
+  id          String    @id @default(cuid())
+  tipo        String // "weektask" | "book" | "topic" | ...
+  refId       String
+  concluido   Boolean   @default(false)
+  concluidoEm DateTime?
+
+  @@unique([tipo, refId])
+}
+
+/// Repertório coringa para redação (dado, lei, obra, citação)
+model Repertorio {
+  id        String  @id @default(cuid())
+  categoria String // "dado" | "lei" | "obra" | "citacao" | "filosofo"
+  titulo    String
+  conteudo  String
+  temas     String  @default("[]") // JSON: [string] temas em que se aplica
+  fonte     String?
+}

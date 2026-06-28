@@ -1,0 +1,37 @@
+# Sobe Postgres + app com um comando: `docker compose up`.
+# Para o app usar Postgres, lembre de trocar o `provider` em
+# prisma/schema.prisma para "postgresql" antes de buildar a imagem.
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: enem
+      POSTGRES_PASSWORD: enem
+      POSTGRES_DB: enem_study
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U enem -d enem_study"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: "postgresql://enem:enem@db:5432/enem_study?schema=public"
+      ENEM_API_BASE: "https://api.enem.dev/v1"
+      ENEM_YEARS: "2019,2020,2021,2022,2023"
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

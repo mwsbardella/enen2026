@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Tema escuro como padrão. Mobile-first, limpo e legível. */
+:root {
+  --background: #0b1020;
+  --surface: #131a2e;
+  --surface-2: #1b2440;
+  --border: #2a3354;
+  --foreground: #e6e9f2;
+  --muted: #9aa3bd;
+  --primary: #60a5fa;
+  --primary-strong: #3b82f6;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Conteúdo markdown renderizado (resumos e enunciados) */
+.prose-enem {
+  line-height: 1.7;
+}
+.prose-enem h1,
+.prose-enem h2,
+.prose-enem h3 {
+  font-weight: 700;
+  margin: 1.2em 0 0.5em;
+  line-height: 1.3;
+}
+.prose-enem h1 {
+  font-size: 1.4rem;
+}
+.prose-enem h2 {
+  font-size: 1.2rem;
+}
+.prose-enem h3 {
+  font-size: 1.05rem;
+}
+.prose-enem p {
+  margin: 0.75em 0;
+}
+.prose-enem ul,
+.prose-enem ol {
+  margin: 0.75em 0;
+  padding-left: 1.4em;
+}
+.prose-enem ul {
+  list-style: disc;
+}
+.prose-enem ol {
+  list-style: decimal;
+}
+.prose-enem li {
+  margin: 0.3em 0;
+}
+.prose-enem strong {
+  color: #fff;
+  font-weight: 700;
+}
+.prose-enem a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.prose-enem blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1em;
+  color: var(--muted);
+  margin: 0.75em 0;
+}
+.prose-enem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 0.75em 0;
+  background: #fff;
+}
+.prose-enem table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  width: 100%;
+}
+.prose-enem th,
+.prose-enem td {
+  border: 1px solid var(--border);
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+.prose-enem code {
+  background: var(--surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+}
