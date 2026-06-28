@@ -1,0 +1,352 @@
+{
+  "year": 2023,
+  "title": "ENEM 2023 (curado — fallback)",
+  "questions": [
+    {
+      "title": "Questão 30 - ENEM 2023",
+      "index": 30,
+      "discipline": "ciencias-humanas",
+      "language": null,
+      "year": 2023,
+      "context": null,
+      "files": [],
+      "correctAlternative": "A",
+      "alternativesIntroduction": "Enquanto estivemos entretidos com os urubus outras coisas andaram acontecendo na cidade. A Companhia baixou novas proibições, umas inteiramente bobocas, só pelo prazer de proibir (ninguém podia cuspir pra cima, nem carregar água em jacá, nem tapar o sol com peneira, como se todo mundo estivesse abusando dessas esquisitices); mas outras bem irritantes, como a de pular muro pra cortar caminho, tática que quase todo mundo que não sofria de reumatismo vinha adotando ultimamente, principalmente os meninos. E não confiando na proibição só, nem na força dos castigos, que eram rigorosos, a Companhia ainda mandou fincar cacos de garrafa nos muros. Achei isso um exagero, e comentei o assunto com mamãe. Meu pai ouviu lá do quarto e veio explicar. Disse que em épocas normais bastava uma coisa ou outra; mas agora a Companhia não podia admitir nenhuma brecha em suas ordens; se alguém desobedecesse à proibição podia se cortar nos cacos; se alguém conseguisse pular um muro quebrando era apanhado pela proibição, nhoc – e fez o gesto de quem torce o pescoço de um frango.\nVEIGA, J. J. Sombras de reis barbudos. Rio de Janeiro: Civilização Brasileira, 1978.\nSob a perspectiva do menino que narra, os fatos ficcionais oferecem um esboço do momento político vigente na década de 1970, aqui representado pelo",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Culto ao medo, infiltrado em situações do cotidiano.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "B",
+          "text": "Sentimento de dúvida quanto à veracidade das informações.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Ambiente de sonho, delineado por imagens perturbadoras.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Incentivo ao desenvolvimento econômico com a iniciativa privada.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Espaço urbano marcado por uma política de isolamento das crianças.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 46 - ENEM 2023",
+      "index": 46,
+      "discipline": "ciencias-humanas",
+      "language": null,
+      "year": 2023,
+      "context": "![](https://enem.dev/2023/questions/46/4eac436b-15be-438c-8219-f2043ab21946.png)",
+      "files": [
+        "https://enem.dev/2023/questions/46/4eac436b-15be-438c-8219-f2043ab21946.png"
+      ],
+      "correctAlternative": "C",
+      "alternativesIntroduction": "Fotografia da avó bordada\nSCARELI. G. A máquina de costura e os fios da memória Revista Brasileira de Pesquisa (Auto) Biográfica, n. 18 maio-ago, 2021\nA definição de Sertão descrita no bordado associa esse recorte espacial a",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Percursos e roteiros turísticos.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Trajetos e movimentos holísticos.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Vivências e itinerários socioafetivos.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "D",
+          "text": "Fronteiras e demarcações territoriais.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Profissões e interesses econômicos.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 6 - ENEM 2023",
+      "index": 6,
+      "discipline": "linguagens",
+      "language": null,
+      "year": 2023,
+      "context": null,
+      "files": [],
+      "correctAlternative": "D",
+      "alternativesIntroduction": "A sessão do Comitê Olímpico Internacional (COI) aprovou uma mudança histórica e inédita no lema olímpico, criado em 1894 pelo Barão Pierre de Coubertin para expressar os valores e a excelência do esporte. Mais de 120 anos depois, o lema tem sua primeira alteração para ressaltar a solidariedade e incluir a palavra “juntos” mais rápido, mais alto, mais forte – juntos. A mudança foi aprovada por unanimidade pelos membros do COI e celebrada pelo presidente da entidade.\nDisponível em: https://ge.globo.com Acesso em: 10 nov. 2021 (adaptado)\nDe acordo com o texto, a alteração do lema olímpico teve como objetivo a",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Unificação do lema anterior ao atual.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Aproximação entre o lema olímpico e o COI.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Junção do lema olímpico com os princípios esportivos.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Associação entre o lema olímpico e a cooperatividade.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "E",
+          "text": "Vinculação entre o lema olímpico e os eventos atléticos.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 7 - ENEM 2023",
+      "index": 7,
+      "discipline": "linguagens",
+      "language": null,
+      "year": 2023,
+      "context": "**Mais iluminada que outras**\n\nTenho dois seios, estas duas coxas, duas mãos que me são muito úteis, olhos escuros, estas duas sobrancelhas que preencho com maquiagem comprada por dezenove e noventa e orelhas que não aceitam bijuterias. Este corpo é um corpo faminto, dentado, cruel, capaz e violento. Movo os braços e multidões correm desesperadas. Caminho no escuro com o rosto para baixo, pois cada parte isolada de mim tem sua própria vida e não quero domá-las. Animal da caatinga. Forte demais. Engolidora de espadas e espinhos. Dizem e eu ouvi, mas depois também li, que o estado do Ceará aboliu a escravidão quatro anos antes do restante do país. Todos aqueles corpos que eram trazidos com  \nseus dedos contados, seus calcanhares prontos e seus umbigos em fogo, todos eles foram interrompidos no porto. Um homem – dizem e eu ouvi e depois também li — liderou o levante. E todos esses corpos foram buscar outros incômodos. Foram ser incomodados.\n\nARRAES. J. Redemoinho em dia quente. São Paulo: Alfaguara, 2019.",
+      "files": [],
+      "correctAlternative": "A",
+      "alternativesIntroduction": "Nesse texto, os recursos expressivos usados pela narradora",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Revelam as marcas da violência de raça e de gênero na construção da identidade.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "B",
+          "text": "Questionam o pioneirismo do estado do Ceará no enfrentamento à escravidão.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Reproduzem padrões estéticos em busca da valorização da autoestima feminina.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Sugerem uma atmosfera onírica alinhada ao desejo de resgate da espiritualidade.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Mimetizam, na paisagem, os corpos transformados pela violência da escravidão.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 91 - ENEM 2023",
+      "index": 91,
+      "discipline": "ciencias-natureza",
+      "language": null,
+      "year": 2023,
+      "context": "O número de abelhas encontra-se em declínio em várias regiões do mundo, inclusive no Brasil, sendo que vários fatores contribuem para o colapso de suas colmeias. Nos Estados Unidos, bombas de sementes de espécies vegetais nativas têm sido utilizadas para combater o desaparecimento desses insetos. Elas são pequenas bolinhas recheadas com sementes, adubo e argila. Quando são arremessadas e ficam expostas ao sol e à chuva, germinam até mesmo em solo pouco fértil.\n\nDARAYA, V. Disponível em: http://planetasustentavel.abril.com.br.  \nAcesso em: 2 fev. 2015 (adaptado).",
+      "files": [],
+      "correctAlternative": "D",
+      "alternativesIntroduction": "Esse método contribui para a preservação das abelhas porque",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Reduz sua predação",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Reduz o uso de pesticidas.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Reduz a competição por abrigo.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Aumenta a oferta de alimento",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "E",
+          "text": "Aumenta os locais de reprodução",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 92 - ENEM 2023",
+      "index": 92,
+      "discipline": "ciencias-natureza",
+      "language": null,
+      "year": 2023,
+      "context": "Os mais antigos cozinhavam o feijão na panela de ferro a fim de acabar com a palidez de seus filhos. Alguns chegavam até a colocar um prego enferrujado nesse cozimento para liberar o ferro contido nele. Sabe-se que esse elemento pode ser encontrado na sua forma metálica ou iônica, sendo essencial para a manutenção da vida humana.",
+      "files": [],
+      "correctAlternative": "B",
+      "alternativesIntroduction": "As estratégias citadas eram utilizadas com o objetivo de",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Tratar a diarreia.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Prevenir a anemia.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "C",
+          "text": "Evitar as verminoses.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Remediar o raquitismo",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Combater a febre amarela.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 128 - ENEM 2023",
+      "index": 128,
+      "discipline": "matematica",
+      "language": null,
+      "year": 2023,
+      "context": "É comum em viagens de avião sermos solicitados a desligar aparelhos cujo funcionamento envolva a emissão ou a recepção de ondas eletromagnéticas, como celulares. A justificativa dada para esse procedimento é, entre outras coisas, a necessidade de eliminar fontes de sinais eletromagnéticos que possam interferir nas comunicações, via rádio, dos pilotos com a torre de controle.",
+      "files": [],
+      "correctAlternative": "C",
+      "alternativesIntroduction": "Essa interferência poderá ocorrer somente se as ondas emitidas pelo celular e as recebidas pelo rádio do avião",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Forem ambas audíveis.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Tiverem a mesma potência.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Tiverem a mesma frequência.",
+          "file": null,
+          "isCorrect": true
+        },
+        {
+          "letter": "D",
+          "text": "Tiverem a mesma intensidade.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Propagarem-se com velocidades diferentes.",
+          "file": null,
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "title": "Questão 129 - ENEM 2023",
+      "index": 129,
+      "discipline": "matematica",
+      "language": null,
+      "year": 2023,
+      "context": "O Aldrin é um inseticida agrícola organoclorado sintético de baixa polaridade, cuja estrutura molecular simétrica, de fórmula ![](https://enem.dev/broken-image.svg), está representada na figura. Introduzido na agricultura a partir da década de 1950, esse composto apresenta alta persistência no meio ambiente e acumulação nos organismos, sendo danoso para a saúde.\n\n![](https://enem.dev/broken-image.svg)\n\nVIEGAS JÚNIOR, C. Terpenos com atividade inseticida: uma alternativa para o controle químico de insetos. **Química Nova**, v. 26, n. 3, 2003 (adaptado).\n\nUm pesquisador coletou fluidos biológicos de indivíduos de uma população contaminada por esse inseticida agrícola. Ele analisou amostras de saliva, sangue, lágrima, urina e leite quanto à presença dessa substância.",
+      "files": [],
+      "correctAlternative": "E",
+      "alternativesIntroduction": "Em qual dos fluidos o pesquisador provavelmente encontrou a maior concentração dessa substância?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Saliva, por consequência da atividade de enzimas.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "B",
+          "text": "Sangue, em função das hemácias e leucócitos.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "C",
+          "text": "Lágrima, em razão da concentração de sais.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "D",
+          "text": "Urina, pela presenca de moléculas de ureia.",
+          "file": null,
+          "isCorrect": false
+        },
+        {
+          "letter": "E",
+          "text": "Leite, por causa do alto teor de gorduras.",
+          "file": null,
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
