@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { parseJson } from "@/lib/json";
-import { SUBJECTS, nomeDaArea } from "@/lib/subjects";
+import { SUBJECTS } from "@/lib/subjects";
 import { PageTitle, Card, Pill } from "@/components/ui";
 import SimuladoBuilder from "@/components/SimuladoBuilder";
 

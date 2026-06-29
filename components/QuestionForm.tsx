@@ -88,14 +88,14 @@ export default function QuestionForm({
     }
   }
 
-  // Timer regressivo opcional: auto-envia ao zerar.
+  // Timer regressivo opcional: decrementa a cada segundo e auto-envia ao zerar
+  // (o envio acontece no callback do timeout, não no corpo do efeito).
   useEffect(() => {
-    if (restante == null || resultado) return;
-    if (restante <= 0) {
-      void enviar();
-      return;
-    }
-    const id = setTimeout(() => setRestante((r) => (r == null ? r : r - 1)), 1000);
+    if (restante == null || resultado || restante <= 0) return;
+    const id = setTimeout(() => {
+      if (restante <= 1) void enviar();
+      else setRestante(restante - 1);
+    }, 1000);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [restante, resultado]);
