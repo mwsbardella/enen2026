@@ -20,21 +20,16 @@ import { stringifyJson } from "../lib/json";
 import { inicioCronograma } from "../lib/dates";
 import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "../lib/subjects";
 
-import { linguagensTopics } from "./content/linguagens";
-import { humanasTopics } from "./content/humanas";
 import { redacaoTopics } from "./content/redacao";
-import { matematicaTopics, naturezaTopics } from "./content/manutencao";
 import { books } from "./content/books";
 import { repertorios } from "./content/repertorios";
 import { weeks } from "./content/weeks";
 
-const allTopics = [
-  ...linguagensTopics,
-  ...humanasTopics,
-  ...redacaoTopics,
-  ...matematicaTopics,
-  ...naturezaTopics,
-];
+// Os assuntos das 4 áreas de questões (Linguagens, Humanas, Matemática, Natureza)
+// vêm da TAXONOMIA por frequência (prisma/content/taxonomy.ts), criados pela
+// classificação (npm run classify) e preenchidos por npm run seed:materials.
+// Aqui o seed só cuida dos tópicos de REDAÇÃO (que não derivam de questões).
+const allTopics = [...redacaoTopics];
 
 async function seedUser() {
   const existing = await prisma.user.findFirst();
@@ -221,6 +216,17 @@ async function seedWeeks(
   const subjectIdBySlug = Object.fromEntries(subjects.map((s) => [s.slug, s.id]));
   const inicio = inicioCronograma();
 
+  // Mapa slug-do-tópico -> id do StudyMaterial, montado do BANCO para cobrir tanto
+  // os tópicos do seed antigo quanto os da taxonomia (criados por classify +
+  // seed:materials). Tem precedência sobre o mapa em memória.
+  const matMap: Record<string, string> = { ...materialByTopicSlug };
+  const topicsComMaterial = await prisma.topic.findMany({
+    include: { materials: { take: 1, select: { id: true } } },
+  });
+  for (const t of topicsComMaterial) {
+    if (t.materials[0]) matMap[t.slug] = t.materials[0].id;
+  }
+
   for (const w of weeks) {
     const dataInicio = new Date(inicio);
     dataInicio.setDate(dataInicio.getDate() + (w.numero - 1) * 7);
@@ -245,9 +251,9 @@ async function seedWeeks(
       switch (task.ref.kind) {
         case "material":
         case "revisar":
-          if ("slug" in task.ref) {
+          if ("slug" in task.ref && task.ref.slug) {
             refType = "StudyMaterial";
-            refId = materialByTopicSlug[task.ref.slug] ?? null;
+            refId = matMap[task.ref.slug] ?? null;
           }
           break;
         case "exam":

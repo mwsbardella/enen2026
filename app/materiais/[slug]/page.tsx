@@ -4,7 +4,10 @@ import { prisma } from "@/lib/prisma";
 import { parseJson, type LinkItem } from "@/lib/json";
 import Markdown from "@/components/Markdown";
 import ProgressToggle from "@/components/ProgressToggle";
+import TopicQuestions, { type StudyQuestion } from "@/components/TopicQuestions";
 import { ExternalLinks, SubjectBadge } from "@/components/ui";
+
+type Alt = { letter: string; text: string; file?: string | null };
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +28,24 @@ export default async function MaterialPage({
   const progress = await prisma.progress.findUnique({
     where: { tipo_refId: { tipo: "topic", refId: topic.id } },
   });
+
+  // Questões reais ligadas a este assunto (via classificação → topicId).
+  const questionRows = await prisma.question.findMany({
+    where: { topicId: topic.id },
+    orderBy: [{ year: "desc" }, { index: "asc" }],
+  });
+  const questions: StudyQuestion[] = questionRows.map((q) => ({
+    id: q.id,
+    year: q.year,
+    index: q.index,
+    discipline: q.discipline,
+    language: q.language,
+    contextMarkdown: q.contextMarkdown,
+    comando: q.comando,
+    comentario: q.comentario,
+    correta: q.correta,
+    alternativas: parseJson<Alt[]>(q.alternativas, []),
+  }));
 
   return (
     <article className="space-y-4">
@@ -55,6 +76,8 @@ export default async function MaterialPage({
       ) : (
         <p className="text-muted">Material em construção para este tópico.</p>
       )}
+
+      <TopicQuestions questions={questions} />
     </article>
   );
 }

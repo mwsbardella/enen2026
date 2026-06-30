@@ -14,6 +14,10 @@
     "db:reset": "prisma migrate reset --force",
     "db:seed": "tsx prisma/seed.ts",
     "import": "tsx scripts/import-enem.ts",
+    "parse:inep": "tsx scripts/parse-inep-pdf.ts",
+    "classify": "tsx scripts/classify-questions.ts",
+    "db:count": "tsx scripts/db-count.ts",
+    "seed:materials": "tsx scripts/seed-materials.ts",
     "postinstall": "prisma generate"
   },
   "prisma": {

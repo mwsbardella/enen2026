@@ -14,8 +14,8 @@ export default async function MateriaisPage() {
   return (
     <div className="space-y-6">
       <PageTitle
-        title="Materiais de estudo"
-        subtitle="Resumos próprios + links curados para cada tópico."
+        title="Matérias"
+        subtitle="Assuntos por área (ordenados pelo que mais cai) — resumo + as questões reais de cada um."
       />
       {subjects.map((s) => (
         <section key={s.id}>
