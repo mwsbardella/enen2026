@@ -33,11 +33,9 @@ if not exist "prisma\dev.db" (
   call npm run db:seed
 )
 
-REM --- 3. Preparar a aplicacao (primeira vez) ---
-if not exist ".next" (
-  echo [3/4] Preparando a aplicacao. Primeira vez, leva alguns instantes...
-  call npm run build
-)
+REM --- 3. Atualizar a aplicacao (sempre, para refletir as ultimas mudancas) ---
+echo [3/4] Atualizando a aplicacao (build). Leva alguns instantes...
+call npm run build
 
 REM --- 4. Iniciar o servidor em segundo plano ---
 echo [4/4] Iniciando o servidor...
