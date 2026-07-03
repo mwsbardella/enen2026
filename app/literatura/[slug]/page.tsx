@@ -2,7 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { parseJson, type LinkItem } from "@/lib/json";
+import { resumosCompletos } from "@/lib/resumos-completos";
 import Markdown from "@/components/Markdown";
+import BookTabs from "@/components/BookTabs";
 import ProgressToggle from "@/components/ProgressToggle";
 import { ExternalLinks, Pill } from "@/components/ui";
 
@@ -69,10 +71,22 @@ export default async function LivroPage({
         </div>
       )}
 
-      <div className="rounded-2xl border border-border bg-surface p-4 md:p-6">
-        <Markdown>{book.resumoMarkdown}</Markdown>
-        <ExternalLinks links={links} />
-      </div>
+      {resumosCompletos[book.slug] ? (
+        <BookTabs
+          visaoGeral={
+            <>
+              <Markdown>{book.resumoMarkdown}</Markdown>
+              <ExternalLinks links={links} />
+            </>
+          }
+          resumoCompleto={<Markdown>{resumosCompletos[book.slug]}</Markdown>}
+        />
+      ) : (
+        <div className="rounded-2xl border border-border bg-surface p-4 md:p-6">
+          <Markdown>{book.resumoMarkdown}</Markdown>
+          <ExternalLinks links={links} />
+        </div>
+      )}
     </article>
   );
 }

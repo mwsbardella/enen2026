@@ -188,7 +188,7 @@ Romance de estreia de **Rachel de Queiroz**, ambientado na **grande seca de 1915
       { titulo: "O Quinze — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/o-quinze.htm", fonte: "Brasil Escola" },
       { titulo: "Rachel de Queiroz — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
     ],
-    ordem: 8,
+    ordem: 9,
   },
   {
     slug: "iracema",
@@ -211,7 +211,7 @@ Romance **indianista** do **Romantismo**, de José de Alencar. Narra o amor entr
       { titulo: "Iracema — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/iracema.htm", fonte: "Brasil Escola" },
       { titulo: "Romantismo no Brasil — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/romantismo.htm", fonte: "Mundo Educação" },
     ],
-    ordem: 9,
+    ordem: 10,
   },
   {
     slug: "a-hora-da-estrela",
@@ -234,7 +234,7 @@ Romance **indianista** do **Romantismo**, de José de Alencar. Narra o amor entr
       { titulo: "A Hora da Estrela — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/a-hora-estrela.htm", fonte: "Brasil Escola" },
       { titulo: "Clarice Lispector — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/clarice-lispector.htm", fonte: "Mundo Educação" },
     ],
-    ordem: 10,
+    ordem: 11,
   },
   {
     slug: "auto-da-compadecida",
@@ -257,7 +257,7 @@ Peça teatral de **Ariano Suassuna**, inspirada nos **autos medievais** e na **l
       { titulo: "Auto da Compadecida — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/auto-compadecida.htm", fonte: "Brasil Escola" },
       { titulo: "Ariano Suassuna — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
     ],
-    ordem: 11,
+    ordem: 12,
   },
   {
     slug: "sentimento-do-mundo",
@@ -280,6 +280,124 @@ Livro de poemas de **Carlos Drummond de Andrade**, escrito no fim dos anos 1930,
       { titulo: "Sentimento do Mundo — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/carlos-drummond-andrade.htm", fonte: "Brasil Escola" },
       { titulo: "Drummond — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/carlos-drummond-andrade.htm", fonte: "Mundo Educação" },
     ],
-    ordem: 12,
+    ordem: 13,
+  },
+  {
+    slug: "morte-e-vida-severina",
+    titulo: "Morte e Vida Severina",
+    autor: "João Cabral de Melo Neto",
+    prioridade: "ALTA",
+    escola: "Geração de 45 / poesia social (auto)",
+    temasRedacao: ["Migração e êxodo rural", "Concentração fundiária", "Pobreza extrema", "Direito à vida digna"],
+    resumoMarkdown: `## Morte e Vida Severina (1955)
+
+"**Auto de Natal Pernambucano**" de João Cabral de Melo Neto: poema dramático em metro de **cordel** que narra a retirada de **Severino** do sertão ao Recife, **seguindo o rio Capibaribe**.
+
+**Características marcantes:**
+- **Severino é todos**: "somos muitos Severinos / iguais em tudo na vida" — o nome vira adjetivo ("vida severina" = vida mínima e dura).
+- No caminho, **só a morte dá trabalho**: o defunto de emboscada ("a parte que te cabe deste latifúndio"), a rezadeira, os coveiros do Recife.
+- **Desfecho**: prestes a desistir da vida no cais, Severino presencia o **nascimento do filho do mestre carpina** no mangue — "e não há melhor resposta / que o espetáculo da vida".
+- Forma rigorosa: **redondilhas**, paralelismo popular, o "antilirismo" cabralino.
+
+**Por que é prioridade**: um dos textos **mais cobrados da história do ENEM**; par obrigatório de *Vidas Secas* e *O Quinze* no eixo do retirante.`,
+    links: [
+      { titulo: "Morte e Vida Severina — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/morte-vida-severina.htm", fonte: "Brasil Escola" },
+      { titulo: "João Cabral de Melo Neto — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/joao-cabral-melo-neto.htm", fonte: "Mundo Educação" },
+    ],
+    ordem: 8,
+  },
+  {
+    slug: "macunaima",
+    titulo: "Macunaíma",
+    autor: "Mário de Andrade",
+    prioridade: "MEDIA",
+    escola: "Modernismo (1ª geração)",
+    temasRedacao: ["Identidade nacional", "Cultura brasileira", "Antropofagia cultural"],
+    resumoMarkdown: `## Macunaíma (1928)
+
+**Rapsódia** de Mário de Andrade, obra máxima da **1ª geração modernista**. Narra as aventuras de Macunaíma, o "**herói sem nenhum caráter**", da floresta do Uraricoera à São Paulo das máquinas, em busca da **muiraquitã** roubada pelo gigante Piaimã.
+
+**Características marcantes:**
+- **Colagem de lendas** indígenas, mitos africanos e cultura popular; tempo e espaço míticos.
+- **Língua "brasileira"**: oralidade, tupinismos e regionalismos misturados de propósito — o projeto de escrever como o Brasil fala.
+- **"Carta pras Icamiabas"**: paródia do português bacharelesco ("os brasileiros falam numa língua e escrevem noutra").
+- Desfecho melancólico: sem talismã e sem tribo, o herói vira a constelação da **Ursa Maior**.
+
+**Por que estudar**: a Semana de 22 e o projeto modernista de identidade nacional caem muito; o lema "Ai! que preguiça!" e a antropofagia cultural são repertório clássico.`,
+    links: [
+      { titulo: "Macunaíma — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/macunaima.htm", fonte: "Brasil Escola" },
+      { titulo: "Modernismo 1ª fase — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/primeira-fase-modernista.htm", fonte: "Mundo Educação" },
+    ],
+    ordem: 14,
+  },
+  {
+    slug: "o-navio-negreiro",
+    titulo: "O Navio Negreiro",
+    autor: "Castro Alves",
+    prioridade: "MEDIA",
+    escola: "Romantismo (3ª geração, condoreirismo)",
+    temasRedacao: ["Escravidão e reparação histórica", "Racismo estrutural", "Direitos humanos"],
+    resumoMarkdown: `## O Navio Negreiro (1868)
+
+Poema-símbolo do **condoreirismo** (3ª geração romântica), de Castro Alves, o "**Poeta dos Escravos**". Em **6 cantos**, o olhar desce do mar sublime ("'Stamos em pleno mar...") ao porão do navio negreiro — "**Era um sonho dantesco...**".
+
+**Características marcantes:**
+- Poesia **declamatória e engajada**: apóstrofes (ao mar, a Deus, à bandeira), hipérboles, antíteses.
+- O canto VI interpela a **bandeira brasileira**: "Auriverde pendão de minha terra (...) Antes te houvessem roto na batalha, / Que servires a um povo de mortalha!".
+- Denúncia escrita quando o tráfico já era ilegal, mas a escravidão persistia.
+
+**Por que estudar**: recorrente nas provas (gerações românticas, recursos retóricos) e ponte natural para **racismo estrutural e trabalho escravo contemporâneo**; retomado por slams e rappers (intertextualidade).`,
+    links: [
+      { titulo: "Castro Alves — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/castro-alves.htm", fonte: "Brasil Escola" },
+      { titulo: "Terceira geração romântica — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/terceira-geracao-romantica.htm", fonte: "Mundo Educação" },
+    ],
+    ordem: 15,
+  },
+  {
+    slug: "olhos-dagua",
+    titulo: "Olhos d'água",
+    autor: "Conceição Evaristo",
+    prioridade: "MEDIA",
+    escola: "Literatura contemporânea (contos)",
+    temasRedacao: ["Violência contra a mulher negra", "Racismo", "Periferia e Estado", "Representatividade"],
+    resumoMarkdown: `## Olhos d'água (2014)
+
+**15 contos** de Conceição Evaristo (Prêmio **Jabuti 2015**), protagonizados por **mulheres negras** entre a periferia e a memória. É a obra-síntese da "**escrevivência**": escrever a partir da vivência do corpo negro e feminino.
+
+**Características marcantes:**
+- Conto-título: a busca pela **cor dos olhos da mãe** — olhos "cor d'água", feitos de lágrima e rio.
+- "**Maria**": empregada doméstica linchada num ônibus após ser cumprimentada pelo ex durante um assalto — o conto mais citado do livro.
+- "Ana Davenga", "Zaíta esquece de guardar os brinquedos": a violência de Estado e a bala perdida como rotina.
+- Prosa poética e econômica: a violência nunca é espetáculo.
+
+**Por que estudar**: Evaristo é presença crescente no ENEM e nos vestibulares; "escrevivência" é conceito-repertório sofisticado para **desigualdade, gênero e raça**.`,
+    links: [
+      { titulo: "Conceição Evaristo — Brasil Escola", url: "https://brasilescola.uol.com.br/literatura/conceicao-evaristo.htm", fonte: "Brasil Escola" },
+      { titulo: "Literatura contemporânea — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
+    ],
+    ordem: 16,
+  },
+  {
+    slug: "grande-sertao-veredas",
+    titulo: "Grande Sertão: Veredas",
+    autor: "João Guimarães Rosa",
+    prioridade: "BAIXA",
+    escola: "Modernismo (3ª geração)",
+    temasRedacao: ["Violência e ordem", "Bem e mal", "Identidade e gênero"],
+    resumoMarkdown: `## Grande Sertão: Veredas (1956)
+
+Romance-monumento de Guimarães Rosa: **Riobaldo**, velho ex-jagunço, monologa para um visitante letrado sobre a vida no bando, o suposto **pacto com o Diabo** nas Veredas Mortas e o amor proibido por **Diadorim** — que, morto na batalha final, revela-se **mulher** (Maria Deodorina, filha de Joca Ramiro).
+
+**Características marcantes:**
+- **Um único fluxo** sem capítulos; interlocutor mudo ("o senhor...").
+- **Língua rosiana**: neologismos ("nonada"), oralidade mineira, prosa com densidade de poesia. Refrão: "**viver é muito perigoso**".
+- Regional que vira metafísico: "o sertão é o mundo". Última palavra: "**Travessia.**"
+
+**Por que prioridade baixa**: o livro inteiro é longo e difícil — no ENEM caem **trechos**. Estratégia: conhecer enredo, narrador e frases-chave por esta análise, lendo excertos.`,
+    links: [
+      { titulo: "Grande Sertão: Veredas — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/grande-sertao-veredas.htm", fonte: "Brasil Escola" },
+      { titulo: "Guimarães Rosa — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/guimaraes-rosa.htm", fonte: "Mundo Educação" },
+    ],
+    ordem: 17,
   },
 ];

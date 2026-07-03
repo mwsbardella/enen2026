@@ -18,6 +18,7 @@
     "classify": "tsx scripts/classify-questions.ts",
     "db:count": "tsx scripts/db-count.ts",
     "seed:materials": "tsx scripts/seed-materials.ts",
+    "seed:books": "tsx scripts/seed-books.ts",
     "postinstall": "prisma generate"
   },
   "prisma": {
