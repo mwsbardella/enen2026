@@ -17,6 +17,7 @@
 import "dotenv/config";
 import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
+import { textoIntegralDe } from "../lib/texto-integral";
 import { inicioCronograma } from "../lib/dates";
 import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "../lib/subjects";
 
@@ -90,34 +91,30 @@ async function seedTopicsAndMaterials(): Promise<Record<string, string>> {
 
 async function seedBooks(): Promise<Record<string, string>> {
   const bookBySlug: Record<string, string> = {};
+  let comTexto = 0;
   for (const b of books) {
+    // Texto integral (domínio público) versionado em data/livros/<slug>.txt
+    const textoCompleto = textoIntegralDe(b.slug);
+    if (textoCompleto) comTexto++;
+    const data = {
+      titulo: b.titulo,
+      autor: b.autor,
+      prioridade: b.prioridade,
+      escola: b.escola,
+      temasRedacao: stringifyJson(b.temasRedacao),
+      resumoMarkdown: b.resumoMarkdown,
+      links: stringifyJson(b.links),
+      textoCompleto,
+      ordem: b.ordem,
+    };
     const book = await prisma.book.upsert({
       where: { slug: b.slug },
-      update: {
-        titulo: b.titulo,
-        autor: b.autor,
-        prioridade: b.prioridade,
-        escola: b.escola,
-        temasRedacao: stringifyJson(b.temasRedacao),
-        resumoMarkdown: b.resumoMarkdown,
-        links: stringifyJson(b.links),
-        ordem: b.ordem,
-      },
-      create: {
-        slug: b.slug,
-        titulo: b.titulo,
-        autor: b.autor,
-        prioridade: b.prioridade,
-        escola: b.escola,
-        temasRedacao: stringifyJson(b.temasRedacao),
-        resumoMarkdown: b.resumoMarkdown,
-        links: stringifyJson(b.links),
-        ordem: b.ordem,
-      },
+      update: data,
+      create: { slug: b.slug, ...data },
     });
     bookBySlug[b.slug] = book.id;
   }
-  console.log(`✓ Books (${books.length})`);
+  console.log(`✓ Books (${books.length}, ${comTexto} com texto integral)`);
   return bookBySlug;
 }
 

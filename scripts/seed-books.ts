@@ -12,21 +12,15 @@
  * Book.textoCompleto — assim o sistema funciona offline, sem internet.
  */
 import "dotenv/config";
-import { readFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
 import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
+import { textoIntegralDe } from "../lib/texto-integral";
 import { books } from "../prisma/content/books";
-
-const LIVROS_DIR = join(__dirname, "..", "data", "livros");
 
 async function main() {
   let comTexto = 0;
   for (const b of books) {
-    const txtPath = join(LIVROS_DIR, `${b.slug}.txt`);
-    const textoCompleto = existsSync(txtPath)
-      ? readFileSync(txtPath, "utf-8")
-      : null;
+    const textoCompleto = textoIntegralDe(b.slug);
     if (textoCompleto) comTexto++;
 
     const data = {
