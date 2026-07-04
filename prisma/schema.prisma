@@ -150,6 +150,19 @@ model Book {
   /// Texto integral da obra (apenas domínio público), importado de data/livros/<slug>.txt
   textoCompleto  String?
   ordem          Int    @default(0)
+
+  readingMark ReadingMark?
+}
+
+/// Marcador de leitura do texto integral — exatamente UM ponto por livro.
+/// Guarda o índice do parágrafo onde o leitor parou; a página de leitura
+/// abre rolada até ele.
+model ReadingMark {
+  bookId       String   @id
+  paragrafo    Int
+  atualizadoEm DateTime @updatedAt
+
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
 }
 
 /// Tentativa de resolução de uma Exam
