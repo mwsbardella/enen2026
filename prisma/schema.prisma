@@ -147,6 +147,8 @@ model Book {
   temasRedacao   String @default("[]") // JSON: [string]
   resumoMarkdown String
   links          String @default("[]") // JSON: [{ titulo, url, fonte }]
+  /// Texto integral da obra (apenas domínio público), importado de data/livros/<slug>.txt
+  textoCompleto  String?
   ordem          Int    @default(0)
 }
 

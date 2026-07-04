@@ -53,6 +53,18 @@ export default async function LivroPage({
         />
       </div>
 
+      {book.textoCompleto && (
+        <Link
+          href={`/literatura/${book.slug}/livro`}
+          className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-surface-2"
+        >
+          📖 Ler a obra completa
+          <span className="text-xs font-normal text-muted">
+            (texto integral · domínio público)
+          </span>
+        </Link>
+      )}
+
       {temas.length > 0 && (
         <div>
           <h3 className="mb-1 text-sm font-semibold text-muted">

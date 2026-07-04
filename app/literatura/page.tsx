@@ -14,7 +14,19 @@ const PRIO_TONE: Record<string, "danger" | "default" | "muted"> = {
 
 export default async function LiteraturaPage() {
   const [books, lidos] = await Promise.all([
-    prisma.book.findMany({ orderBy: { ordem: "asc" } }),
+    // select explícito: evita carregar textoCompleto (texto integral) na listagem
+    prisma.book.findMany({
+      orderBy: { ordem: "asc" },
+      select: {
+        id: true,
+        slug: true,
+        titulo: true,
+        autor: true,
+        prioridade: true,
+        escola: true,
+        temasRedacao: true,
+      },
+    }),
     prisma.progress.findMany({
       where: { tipo: "book", concluido: true },
       select: { refId: true },
