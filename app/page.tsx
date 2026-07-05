@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { ENEM_DIA_1, ENEM_DIA_2, semanaAtualNumero, formatarData } from "@/lib/dates";
+import { ENEM_DIA_1, ENEM_DIA_2, semanaAtualPorData, formatarData } from "@/lib/dates";
 import { enrichTasks } from "@/lib/tasks";
 import Countdown from "@/components/Countdown";
 import TaskList from "@/components/TaskList";
@@ -29,19 +29,25 @@ function Indicador({
 export default async function Dashboard() {
   const user = await prisma.user.findFirst();
 
-  const [totalTasks, doneTasks, totalLivros, livrosLidos, attempts] =
-    await Promise.all([
-      prisma.weekTask.count(),
-      prisma.progress.count({ where: { tipo: "weektask", concluido: true } }),
-      prisma.book.count(),
-      prisma.progress.count({ where: { tipo: "book", concluido: true } }),
-      prisma.attempt.findMany({
-        where: { finalizadoEm: { not: null }, total: { gt: 0 } },
-        orderBy: { iniciadoEm: "asc" },
-        select: { acertos: true, total: true },
-      }),
-    ]);
+  const [weeksAll, totalLivros, livrosLidos, attempts] = await Promise.all([
+    prisma.week.findMany({
+      orderBy: { ordem: "asc" },
+      include: { tasks: { orderBy: { ordem: "asc" } } },
+    }),
+    prisma.book.count(),
+    prisma.progress.count({ where: { tipo: "book", concluido: true } }),
+    prisma.attempt.findMany({
+      where: { finalizadoEm: { not: null }, total: { gt: 0 } },
+      orderBy: { iniciadoEm: "asc" },
+      select: { acertos: true, total: true },
+    }),
+  ]);
 
+  // Conclusão derivada (itens de material/livro dependem do conteúdo estudado).
+  const enrichedAll = await Promise.all(weeksAll.map((w) => enrichTasks(w.tasks)));
+  const allTasks = enrichedAll.flat();
+  const totalTasks = allTasks.length;
+  const doneTasks = allTasks.filter((t) => t.done).length;
   const pctCronograma = totalTasks ? Math.round((doneTasks / totalTasks) * 100) : 0;
   const medias = attempts.map((a) => (a.acertos / a.total) * 100);
   const mediaSimulados = medias.length
@@ -49,14 +55,13 @@ export default async function Dashboard() {
     : null;
   const ultimas = medias.slice(-3).map((m) => Math.round(m));
 
-  const numero = semanaAtualNumero();
-  const semana = numero
-    ? await prisma.week.findUnique({
-        where: { numero },
-        include: { tasks: { orderBy: { ordem: "asc" } } },
-      })
-    : null;
-  const tasks = semana ? await enrichTasks(semana.tasks) : [];
+  // Semana em destaque = aquela cujo período contém hoje (senão, a primeira).
+  const idxAtual = weeksAll.findIndex((w) =>
+    semanaAtualPorData(w.dataInicio, w.dataFim),
+  );
+  const idxDestaque = idxAtual >= 0 ? idxAtual : weeksAll.length ? 0 : -1;
+  const semana = idxDestaque >= 0 ? weeksAll[idxDestaque] : null;
+  const tasks = idxDestaque >= 0 ? enrichedAll[idxDestaque] : [];
 
   return (
     <div className="space-y-6">
@@ -97,7 +102,7 @@ export default async function Dashboard() {
       <div>
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-lg font-bold">
-            {semana ? `Semana ${semana.numero} em destaque` : "Cronograma"}
+            {semana ? `${semana.titulo} em destaque` : "Cronograma"}
           </h2>
           <Link href="/cronograma" className="text-sm text-primary">
             ver tudo →

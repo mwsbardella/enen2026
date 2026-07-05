@@ -102,13 +102,18 @@ model Exam {
   attempts Attempt[]
 }
 
-/// Semana do cronograma (1..19)
+/// Semana do cronograma. Pode ser semeada ("sugerido") ou criada pelo usuário
+/// ("usuario"). A ordenação é por `ordem`; `numero` deixou de ser único porque o
+/// usuário pode inserir/remover semanas. Datas são opcionais.
 model Week {
-  id         String   @id @default(cuid())
-  numero     Int      @unique
-  foco       String
-  dataInicio DateTime
-  dataFim    DateTime
+  id         String    @id @default(cuid())
+  titulo     String    @default("Semana")
+  foco       String    @default("")
+  ordem      Int       @default(0)
+  origem     String    @default("sugerido") // "sugerido" | "usuario"
+  dataInicio DateTime?
+  dataFim    DateTime?
+  criadoEm   DateTime  @default(now())
 
   tasks WeekTask[]
 }
@@ -121,16 +126,20 @@ enum TaskTipo {
   REVISAR
 }
 
-/// Tarefa de uma semana, ligada a um conteúdo executável
+/// Item de uma semana. Pode agrupar VÁRIOS conteúdos: `refs` é um JSON
+/// [{ kind: "topic"|"book"|"exam", id }] (serializado via lib/json.ts, pois o
+/// SQLite não tem JSON nativo). Um item LER/Literatura só é concluído quando TODOS
+/// os seus refs (tópicos estudados / livros lidos) estiverem concluídos.
 model WeekTask {
-  id        String   @id @default(cuid())
-  weekId    String
-  subjectId String?
-  titulo    String
-  ordem     Int
-  tipo      TaskTipo
-  refType   String? // "StudyMaterial" | "Exam" | "Book" | "Redacao"
-  refId     String?
+  id         String    @id @default(cuid())
+  weekId     String
+  subjectId  String?
+  titulo     String
+  ordem      Int
+  tipo       TaskTipo
+  refs       String    @default("[]") // JSON: [{ kind, id }]
+  dataInicio DateTime?
+  dataFim    DateTime?
 
   week    Week     @relation(fields: [weekId], references: [id], onDelete: Cascade)
   subject Subject? @relation(fields: [subjectId], references: [id], onDelete: SetNull)

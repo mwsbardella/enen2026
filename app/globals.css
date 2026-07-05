@@ -115,3 +115,9 @@ body {
   font-family: var(--font-mono), monospace;
   font-size: 0.9em;
 }
+
+/* Filtro "somente com resolução" (components/QuestionFilter.tsx): esconde as
+   questões sem resolução quando o container tem a classe .qf-only. */
+.qf-only [data-has-sol="0"] {
+  display: none;
+}

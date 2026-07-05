@@ -24,7 +24,7 @@ import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "../lib/subjects";
 import { redacaoTopics } from "./content/redacao";
 import { books } from "./content/books";
 import { repertorios } from "./content/repertorios";
-import { weeks } from "./content/weeks";
+import { weeks, type WeekTaskSeed } from "./content/weeks";
 
 // Os assuntos das 4 áreas de questões (Linguagens, Humanas, Matemática, Natureza)
 // vêm da TAXONOMIA por frequência (prisma/content/taxonomy.ts), criados pela
@@ -204,8 +204,9 @@ async function seedExams(): Promise<Record<string, string>> {
   return examBySlug;
 }
 
+type TaskRefResolved = { kind: "topic" | "book" | "exam"; id: string };
+
 async function seedWeeks(
-  materialByTopicSlug: Record<string, string>,
   examBySlug: Record<string, string>,
   bookBySlug: Record<string, string>,
 ) {
@@ -213,16 +214,37 @@ async function seedWeeks(
   const subjectIdBySlug = Object.fromEntries(subjects.map((s) => [s.slug, s.id]));
   const inicio = inicioCronograma();
 
-  // Mapa slug-do-tópico -> id do StudyMaterial, montado do BANCO para cobrir tanto
-  // os tópicos do seed antigo quanto os da taxonomia (criados por classify +
-  // seed:materials). Tem precedência sobre o mapa em memória.
-  const matMap: Record<string, string> = { ...materialByTopicSlug };
-  const topicsComMaterial = await prisma.topic.findMany({
-    include: { materials: { take: 1, select: { id: true } } },
-  });
-  for (const t of topicsComMaterial) {
-    if (t.materials[0]) matMap[t.slug] = t.materials[0].id;
+  // Mapa topic slug -> topic.id (refs {kind:"topic"}). Do BANCO, cobre os tópicos
+  // de redação (seed) e os da taxonomia (classify + seed:materials). A conclusão
+  // "gated" é derivada do progresso do TÓPICO (tipo "topic", refId = topic.id).
+  const topics = await prisma.topic.findMany({ select: { id: true, slug: true } });
+  const topicIdBySlug = Object.fromEntries(topics.map((t) => [t.slug, t.id]));
+
+  function buildRefs(ref: WeekTaskSeed["ref"]): TaskRefResolved[] {
+    switch (ref.kind) {
+      case "material":
+      case "revisar":
+        return ref.slugs
+          .map((slug) => topicIdBySlug[slug])
+          .filter((id): id is string => !!id)
+          .map((id) => ({ kind: "topic", id }));
+      case "book":
+        return ref.slugs
+          .map((slug) => bookBySlug[slug])
+          .filter((id): id is string => !!id)
+          .map((id) => ({ kind: "book", id }));
+      case "exam": {
+        const id = examBySlug[ref.slug];
+        return id ? [{ kind: "exam", id }] : [];
+      }
+      case "redacao":
+        return [];
+    }
   }
+
+  // Preserva as semanas criadas pelo usuário (origem "usuario"); recria só as
+  // sugeridas. O cascade remove as tarefas das semanas sugeridas apagadas.
+  await prisma.week.deleteMany({ where: { origem: "sugerido" } });
 
   for (const w of weeks) {
     const dataInicio = new Date(inicio);
@@ -230,43 +252,20 @@ async function seedWeeks(
     const dataFim = new Date(dataInicio);
     dataFim.setDate(dataFim.getDate() + 6);
 
-    const week = await prisma.week.upsert({
-      where: { numero: w.numero },
-      update: { foco: w.foco, dataInicio, dataFim },
-      create: { numero: w.numero, foco: w.foco, dataInicio, dataFim },
+    const week = await prisma.week.create({
+      data: {
+        titulo: `Semana ${w.numero}`,
+        foco: w.foco,
+        ordem: w.numero,
+        origem: "sugerido",
+        dataInicio,
+        dataFim,
+      },
     });
-
-    // Recria tarefas (idempotente)
-    await prisma.weekTask.deleteMany({ where: { weekId: week.id } });
 
     let ordem = 0;
     for (const task of w.tasks) {
       ordem++;
-      let refType: string | null = null;
-      let refId: string | null = null;
-
-      switch (task.ref.kind) {
-        case "material":
-        case "revisar":
-          if ("slug" in task.ref && task.ref.slug) {
-            refType = "StudyMaterial";
-            refId = matMap[task.ref.slug] ?? null;
-          }
-          break;
-        case "exam":
-          refType = "Exam";
-          refId = examBySlug[task.ref.slug] ?? null;
-          break;
-        case "book":
-          refType = "Book";
-          refId = bookBySlug[task.ref.slug] ?? null;
-          break;
-        case "redacao":
-          refType = "Redacao";
-          refId = null;
-          break;
-      }
-
       await prisma.weekTask.create({
         data: {
           weekId: week.id,
@@ -274,24 +273,23 @@ async function seedWeeks(
           titulo: task.titulo,
           ordem,
           tipo: task.tipo,
-          refType,
-          refId,
+          refs: stringifyJson(buildRefs(task.ref)),
         },
       });
     }
   }
-  console.log(`✓ Weeks + WeekTasks (${weeks.length} semanas)`);
+  console.log(`✓ Weeks + WeekTasks (${weeks.length} semanas sugeridas)`);
 }
 
 async function main() {
   console.log("ENEM Study — seed iniciando...");
   await seedUser();
   await seedSubjects();
-  const materialByTopicSlug = await seedTopicsAndMaterials();
+  await seedTopicsAndMaterials();
   const bookBySlug = await seedBooks();
   await seedRepertorios();
   const examBySlug = await seedExams();
-  await seedWeeks(materialByTopicSlug, examBySlug, bookBySlug);
+  await seedWeeks(examBySlug, bookBySlug);
   console.log("✓ Seed concluído.");
 }
 

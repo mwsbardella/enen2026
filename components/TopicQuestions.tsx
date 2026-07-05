@@ -1,4 +1,5 @@
 import Markdown from "@/components/Markdown";
+import QuestionFilter from "@/components/QuestionFilter";
 import { corDaArea, nomeDaArea, DISCIPLINE_TO_SUBJECT } from "@/lib/subjects";
 
 export type StudyQuestion = {
@@ -34,6 +35,8 @@ export default function TopicQuestions({ questions }: { questions: StudyQuestion
     );
   }
 
+  const comSolucao = questions.filter((q) => q.comentario).length;
+
   return (
     <section className="space-y-3">
       <h2 className="text-lg font-bold">
@@ -45,11 +48,13 @@ export default function TopicQuestions({ questions }: { questions: StudyQuestion
         aparece destacado.
       </p>
 
+      <QuestionFilter total={questions.length} withSol={comSolucao}>
       {questions.map((q) => {
         const cor = corDaArea(DISCIPLINE_TO_SUBJECT[q.discipline] ?? q.discipline);
         return (
           <details
             key={q.id}
+            data-has-sol={q.comentario ? "1" : "0"}
             className="group rounded-xl border border-border bg-surface p-0 [&_summary]:list-none"
           >
             <summary className="flex cursor-pointer items-start gap-3 p-4">
@@ -100,15 +105,16 @@ export default function TopicQuestions({ questions }: { questions: StudyQuestion
                 })}
               </ul>
 
-              {q.correta == null && (
-                <p className="mt-2 text-xs text-muted">
-                  (Gabarito não disponível para esta questão.)
-                </p>
-              )}
               {q.comentario && (
-                <div className="mt-3 rounded-lg border border-border bg-surface-2 p-3 text-sm">
-                  <strong className="text-muted">Comentário:</strong> {q.comentario}
-                </div>
+                <details className="group/sol mt-3 rounded-lg border border-primary/40 bg-surface-2 [&_summary]:list-none">
+                  <summary className="flex cursor-pointer items-center justify-between gap-2 px-3 py-2 text-sm font-semibold text-primary">
+                    <span>🧠 Como resolver (passo a passo)</span>
+                    <span className="text-muted transition-transform group-open/sol:rotate-180">▾</span>
+                  </summary>
+                  <div className="border-t border-border px-3 pb-3 pt-2 text-sm">
+                    <Markdown>{q.comentario}</Markdown>
+                  </div>
+                </details>
               )}
               <p className="mt-3 text-right text-xs text-muted">
                 Fonte: {nomeDaArea(DISCIPLINE_TO_SUBJECT[q.discipline] ?? q.discipline)} ·
@@ -118,6 +124,7 @@ export default function TopicQuestions({ questions }: { questions: StudyQuestion
           </details>
         );
       })}
+      </QuestionFilter>
     </section>
   );
 }

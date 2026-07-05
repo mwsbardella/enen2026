@@ -30,8 +30,9 @@ export default async function MaterialPage({
   });
 
   // Questões reais ligadas a este assunto (via classificação → topicId).
+  // Só as que têm gabarito (correta != null) — não mostramos questões sem resposta.
   const questionRows = await prisma.question.findMany({
-    where: { topicId: topic.id },
+    where: { topicId: topic.id, correta: { not: null } },
     orderBy: [{ year: "desc" }, { index: "asc" }],
   });
   const questions: StudyQuestion[] = questionRows.map((q) => ({

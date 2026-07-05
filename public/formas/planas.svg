@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="880" height="290" fill="#ffffff"/>
+  <style>
+    .fig { fill:#dbeafe; stroke:#1d4ed8; stroke-width:2.5; stroke-linejoin:round; }
+    .lbl { fill:#111827; font-size:15px; text-anchor:middle; }
+  </style>
+
+  <!-- Linha 1 -->
+  <rect class="fig" x="72" y="25" width="76" height="76"/>
+  <text class="lbl" x="110" y="125">Quadrado</text>
+
+  <rect class="fig" x="268" y="35" width="124" height="56"/>
+  <text class="lbl" x="330" y="125">Retângulo</text>
+
+  <polygon class="fig" points="550,25 508,100 592,100"/>
+  <text class="lbl" x="550" y="125">Triângulo</text>
+
+  <polygon class="fig" points="732,100 762,32 852,32 822,100"/>
+  <text class="lbl" x="782" y="125">Paralelogramo</text>
+
+  <!-- Linha 2 -->
+  <polygon class="fig" points="70,235 150,235 132,165 88,165"/>
+  <text class="lbl" x="110" y="262">Trapézio</text>
+
+  <polygon class="fig" points="330,158 372,200 330,242 288,200"/>
+  <text class="lbl" x="330" y="262">Losango</text>
+
+  <circle class="fig" cx="550" cy="200" r="42"/>
+  <text class="lbl" x="550" y="262">Círculo</text>
+
+  <polygon class="fig" points="812,200 791,236 749,236 728,200 749,164 791,164"/>
+  <text class="lbl" x="770" y="262">Hexágono regular</text>
+</svg>

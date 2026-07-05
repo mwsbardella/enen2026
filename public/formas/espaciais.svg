@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="880" height="320" fill="#ffffff"/>
+  <style>
+    .front { fill:#dbeafe; stroke:#1d4ed8; stroke-width:2.5; stroke-linejoin:round; }
+    .side  { fill:#93c5fd; stroke:#1d4ed8; stroke-width:2.5; stroke-linejoin:round; }
+    .top   { fill:#bfdbfe; stroke:#1d4ed8; stroke-width:2.5; stroke-linejoin:round; }
+    .edge  { fill:none; stroke:#1d4ed8; stroke-width:2.5; stroke-linejoin:round; }
+    .lbl   { fill:#111827; font-size:15px; text-anchor:middle; }
+    .sub   { fill:#4b5563; font-size:12px; text-anchor:middle; }
+  </style>
+
+  <!-- Linha 1 -->
+  <!-- Cubo -->
+  <polygon class="top" points="82,58 102,38 158,38 138,58"/>
+  <polygon class="side" points="138,58 158,38 158,94 138,114"/>
+  <rect class="front" x="82" y="58" width="56" height="56"/>
+  <text class="lbl" x="110" y="135">Cubo</text>
+
+  <!-- Paralelepípedo -->
+  <polygon class="top" points="286,62 306,44 398,44 378,62"/>
+  <polygon class="side" points="378,62 398,44 398,92 378,110"/>
+  <rect class="front" x="286" y="62" width="92" height="48"/>
+  <text class="lbl" x="330" y="132">Paralelepípedo</text>
+  <text class="sub" x="330" y="149">(bloco / caixa)</text>
+
+  <!-- Cilindro -->
+  <ellipse class="top" cx="550" cy="48" rx="34" ry="11"/>
+  <path class="front" d="M516,48 L516,106 A34,11 0 0 0 584,106 L584,48"/>
+  <ellipse class="edge" cx="550" cy="48" rx="34" ry="11"/>
+  <text class="lbl" x="550" y="135">Cilindro</text>
+
+  <!-- Cone -->
+  <path class="front" d="M770,36 L808,106 A38,11 0 0 1 732,106 Z"/>
+  <ellipse class="edge" cx="770" cy="106" rx="38" ry="11"/>
+  <text class="lbl" x="770" y="135">Cone</text>
+
+  <!-- Linha 2 -->
+  <!-- Pirâmide -->
+  <polygon class="side" points="110,182 152,254 110,270"/>
+  <polygon class="front" points="110,182 68,254 110,270"/>
+  <polyline class="edge" points="68,254 110,238 152,254"/>
+  <text class="lbl" x="110" y="288">Pirâmide</text>
+
+  <!-- Prisma -->
+  <polygon class="top" points="300,262 330,208 356,196 326,250"/>
+  <polygon class="side" points="360,262 356,196 326,250"/>
+  <polygon class="front" points="300,262 360,262 330,208"/>
+  <text class="lbl" x="332" y="288">Prisma</text>
+
+  <!-- Esfera -->
+  <circle class="front" cx="550" cy="222" r="42"/>
+  <ellipse class="edge" cx="550" cy="222" rx="42" ry="13"/>
+  <text class="lbl" x="550" y="288">Esfera</text>
+
+  <!-- Tronco de pirâmide -->
+  <polygon class="side" points="814,258 796,240 783,196 792,206"/>
+  <polygon class="top" points="744,240 796,240 792,206 757,206"/>
+  <polygon class="front" points="726,258 814,258 792,206 748,206"/>
+  <text class="lbl" x="770" y="286">Tronco de pirâmide</text>
+</svg>

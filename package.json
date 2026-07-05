@@ -19,6 +19,8 @@
     "db:count": "tsx scripts/db-count.ts",
     "seed:materials": "tsx scripts/seed-materials.ts",
     "seed:books": "tsx scripts/seed-books.ts",
+    "seed:solucoes": "tsx scripts/seed-solucoes.ts",
+    "check:cronograma": "tsx scripts/check-cronograma.ts",
     "postinstall": "prisma generate"
   },
   "prisma": {

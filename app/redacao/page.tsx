@@ -4,6 +4,8 @@ import { PageTitle, Card } from "@/components/ui";
 import RedacaoEditor from "@/components/RedacaoEditor";
 import CompetenciaGuide from "@/components/CompetenciaGuide";
 import RepertorioBank, { type Rep } from "@/components/RepertorioBank";
+import RedacoesPassadas from "@/components/RedacoesPassadas";
+import { temasPassados, redacoesModelo } from "@/lib/temas-redacao-passados";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +36,15 @@ export default async function RedacaoPage() {
       <section>
         <h2 className="mb-2 text-lg font-bold">Escrever redação</h2>
         <RedacaoEditor />
+      </section>
+
+      <section>
+        <h2 className="mb-2 text-lg font-bold">Temas de redações anteriores</h2>
+        <p className="mb-2 text-sm text-muted">
+          Temas do ENEM em anos anteriores, com o recorte que a banca cobrava, e
+          redações-modelo comentadas no padrão nota 1000.
+        </p>
+        <RedacoesPassadas temas={temasPassados} modelos={redacoesModelo} />
       </section>
 
       <section>

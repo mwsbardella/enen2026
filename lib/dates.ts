@@ -36,6 +36,19 @@ export function inicioCronograma(): Date {
   return d;
 }
 
+// True se `hoje` está dentro do período [dataInicio, dataFim] de uma semana.
+// Usado para destacar a "semana atual" quando a semana tem datas definidas.
+export function semanaAtualPorData(
+  dataInicio: Date | null,
+  dataFim: Date | null,
+  hoje: Date = new Date(),
+): boolean {
+  if (!dataInicio || !dataFim) return false;
+  const fimDoDia = new Date(dataFim);
+  fimDoDia.setHours(23, 59, 59, 999);
+  return hoje.getTime() >= dataInicio.getTime() && hoje.getTime() <= fimDoDia.getTime();
+}
+
 // Retorna o número (1..19) da semana atual do cronograma, ou null se fora dele.
 export function semanaAtualNumero(from: Date = new Date()): number | null {
   const inicio = inicioCronograma();
