@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Pacote portátil offline (gerado) e Node embutido — não lintar.
+    "dist-portable/**",
+    "tools/**",
   ]),
 ]);
 

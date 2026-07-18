@@ -10,6 +10,8 @@
 export type Solucao = {
   year: number;
   index: number;
+  /** "ingles" | "espanhol" — só p/ as questões de língua estrangeira (mesmo nº em duas versões). */
+  language?: string;
   /** Letra da resposta (A–E). O seed só grava se bater com o gabarito do banco. */
   resposta: string;
   markdown: string;
@@ -955,5 +957,541 @@ O maior CRC é o do **pneu I** (5,1).
 4. Começando com 100, após *n* rodadas: **100 + 3n**.
 
 **Resposta: D** (100 + 3n).`,
+  },
+  {
+    year: 2019,
+    index: 137,
+    resposta: "E",
+    markdown: `**Ideia:** traduzir as condições de pH para a concentração x, lembrando que pH = −log₁₀ x.
+
+1. A flor **rosa** aparece em solo alcalino, ou seja, **pH > 7**. A mais valorizada exige ainda **pH < 8**. Logo, o alvo é **7 < pH < 8**.
+2. Relação-chave: quanto **maior** o pH, **menor** a concentração x (porque há um sinal de menos na fórmula). Então trocamos os extremos:
+   - pH = 7 → x = 10⁻⁷
+   - pH = 8 → x = 10⁻⁸
+3. Como o pH fica **entre 7 e 8**, o x fica **entre 10⁻⁸ e 10⁻⁷** (o menor pH, 7, dá o maior x, 10⁻⁷).
+
+**Resposta: E** (x entre 10⁻⁸ e 10⁻⁷). *Cuidado:* como o pH tem sinal negativo, a ordem "se inverte" ao passar para x.`,
+  },
+  {
+    year: 2019,
+    index: 140,
+    resposta: "D",
+    markdown: `**Ideia:** notação científica é escrever o número como "um algarismo antes da vírgula × 10 elevado a algo".
+
+1. O diâmetro é **0,00011 mm**.
+2. Mova a vírgula para logo depois do primeiro algarismo diferente de zero (o 1): 0,00011 → **1,1**.
+3. Conte quantas casas a vírgula andou: foram **4 casas para a direita**. Como o número é menor que 1, o expoente é **negativo**.
+4. Portanto: 0,00011 = **1,1 × 10⁻⁴**.
+
+**Resposta: D** (1,1 × 10⁻⁴).`,
+  },
+  {
+    year: 2020,
+    index: 141,
+    resposta: "A",
+    markdown: `**Ideia:** contar quantas vezes o algarismo **2** aparece nos números de 100 a 399, olhando separadamente a casa das centenas, das dezenas e das unidades.
+
+1. **Casa das centenas:** o 2 só aparece nos quartos 200 a 299 → são **100** números com centena 2.
+2. **Casa das dezenas:** em cada bloco de 100 (100–199, 200–299, 300–399), a dezena é 2 nos números _20 a _29, ou seja 10 vezes. São 3 blocos → 10 · 3 = **30**.
+3. **Casa das unidades:** a unidade é 2 uma vez a cada 10 números; em 300 números → **30** vezes.
+4. **Total de peças "2":** 100 + 30 + 30 = **160**.
+
+**Resposta: A** (160).`,
+  },
+  {
+    year: 2020,
+    index: 169,
+    resposta: "C",
+    markdown: `**Ideia:** usar conjuntos. "Tipo A" = tem o antígeno A **mas não** o B (tem só A). Precisamos primeiro descobrir quantos têm os dois (tipo AB).
+
+1. **Quem tem pelo menos um antígeno:** total 200, sendo 20 sem nenhum (tipo O) → 200 − 20 = **180**.
+2. **Fórmula da união:** (tem A) + (tem B) − (tem os dois) = (tem pelo menos um). Ou seja: 100 + 110 − (AB) = 180.
+3. Isolando: 210 − (AB) = 180 → **AB = 30** (têm os dois antígenos).
+4. **Só A (tipo A):** dos 100 que têm A, tire os 30 que também têm B → 100 − 30 = **70**.
+
+**Resposta: C** (70). *Pegadinha:* "tem o antígeno A" (100) inclui os AB; o tipo A puro é o que sobra.`,
+  },
+  {
+    year: 2021,
+    index: 160,
+    resposta: "D",
+    markdown: `**Ideia:** para cada suplemento, ver **quantos sachês** são precisos para cobrir os três minerais (o que mandar for o mineral mais "difícil"), e depois o custo total. Vence o mais barato.
+
+Faltam: A = 800 mg, B = 1000 mg, C = 1200 mg.
+
+- **I** (A50, B100, C200; R$2): precisa 800/50=16, 1000/100=10, 1200/200=6 → **16 sachês** → 16·2 = **R$32**.
+- **II** (A800, B250, C200; R$3): 1, 4, 6 → **6 sachês** → 6·3 = **R$18**.
+- **III** (A250, B1000, C300; R$5): 4, 1, 4 → **4 sachês** → 4·5 = **R$20**.
+- **IV** (A600, B500, C1000; R$6): 2, 2, 2 → **2 sachês** → 2·6 = **R$12**.
+- **V** (A400, B800, C1200; R$8): 2, 2, 1 → **2 sachês** → 2·8 = **R$16**.
+
+Menor gasto: **R$12** com o suplemento **IV**.
+
+**Resposta: D** (suplemento IV). *Dica:* em cada suplemento, arredonde **para cima** (não pode comprar meio sachê) e pegue o maior número entre os três minerais.`,
+  },
+  {
+    year: 2021,
+    index: 166,
+    resposta: "B",
+    markdown: `**Ideia:** ver como cada área muda ao **dobrar comprimento e largura**, mantendo a altura.
+
+1. **Paredes:** a área das paredes depende do contorno (comprimento + largura) vezes a altura. Se comprimento e largura dobram e a altura fica igual, o contorno dobra → a área das paredes **dobra (×2)**. (Pintar os dois lados só multiplica tudo por 2 dos dois jeitos, então a comparação continua ×2.)
+2. **Piso:** a área do piso é comprimento × largura. Dobrando os dois: 2 × 2 = **×4** (quatro vezes).
+3. Logo, precisa do **dobro** de tinta para as paredes e **quatro vezes** para o piso — exatamente o que disse o Fornecedor II.
+
+**Resposta: B** (Fornecedor II). *Pegadinha:* altura não muda, então parede só dobra; o piso, com duas medidas dobradas, quadruplica.`,
+  },
+  {
+    year: 2021,
+    index: 173,
+    resposta: "C",
+    markdown: `**Ideia:** para atingir R$300 com o **menor número** de lavagens, priorize a mais cara (completa, R$35).
+
+1. Só com lavagens completas: 300 ÷ 35 ≈ 8,57. Como não existe "meia lavagem", arredonde **para cima**: 9.
+2. Confira: 9 completas = 9 · 35 = **R$315** ≥ 300 ✓.
+3. Com 8 lavagens, o máximo seria 8 · 35 = R$280 < 300 ✗ — não cobre.
+
+**Resposta: C** (9 lavagens). *Ideia-chave:* menos lavagens ⇒ use sempre a de maior valor.`,
+  },
+  {
+    year: 2021,
+    index: 176,
+    resposta: "D",
+    markdown: `**Ideia:** primeiro converter o número romano MCDLXIX para o nosso sistema, depois subtrair de 2050.
+
+1. Quebre em blocos: **M** = 1000; **CD** = 500 − 100 = 400 (o C antes do D subtrai); **LX** = 50 + 10 = 60; **IX** = 10 − 1 = 9.
+2. Some: 1000 + 400 + 60 + 9 = **1469** (ano de fundação).
+3. Anos comemorados em 2050: 2050 − 1469 = **581**.
+
+**Resposta: D** (581). *Regra usada:* letra menor **antes** de uma maior significa subtrair (CD = 400, IX = 9).`,
+  },
+  {
+    year: 2019,
+    index: 92,
+    resposta: "A",
+    markdown: `**Ideia (Física — eletricidade):** o problema é a corrente elétrica que "aparece" no arame por indução. A solução é dar um caminho para essa carga escoar com segurança para a terra.
+
+1. **Aterrar** um objeto é ligá-lo ao solo por um fio, para que qualquer carga acumulada escorra para a terra em vez de passar por quem tocar.
+2. Se aterrarmos **os arames da cerca**, a corrente induzida vai direto para o solo e a cerca deixa de "dar choque".
+3. As outras opções não resolvem: fusível protege contra excesso de corrente num circuito, não contra indução na cerca; e não se deve mexer no aterramento da rede de alta tensão por causa disso.
+
+**Resposta: A** (aterrar os arames da cerca).`,
+  },
+  {
+    year: 2019,
+    index: 93,
+    resposta: "E",
+    markdown: `**Ideia (Biologia — imunidade):** comparar o que a **vacina** faz com o que o tratamento tradicional faz.
+
+1. O tratamento tradicional usa remédio **depois do diagnóstico**, para matar o verme já instalado.
+2. A vacina faz o corpo produzir **anticorpos** de antemão. Assim, o sistema imune reconhece e ataca o esquistossomo **dentro do organismo antes de a doença se manifestar**.
+3. Ela não impede a larva de furar a pele nem elimina o caramujo — atua **depois** que o parasita entrou, mas **antes** dos sintomas.
+
+**Resposta: E** (eliminar o esquistossomo dentro do organismo antes da manifestação de sintomas).`,
+  },
+  {
+    year: 2019,
+    index: 97,
+    resposta: "D",
+    markdown: `**Ideia (Biologia — relações ecológicas):** identificar a relação entre indivíduos que **disputam o mesmo recurso**.
+
+1. As cutias são da **mesma espécie** e roubam uma da outra a mesma coisa: as sementes enterradas.
+2. Quando indivíduos disputam um recurso limitado (aqui, o alimento estocado), a relação é de **competição**.
+3. Não é predatismo (não comem umas às outras), nem parasitismo, nem comensalismo (nesses, um se beneficia sem disputar diretamente o mesmo recurso).
+
+**Resposta: D** (competição).`,
+  },
+  {
+    year: 2019,
+    index: 99,
+    resposta: "A",
+    markdown: `**Ideia (Química/Biologia — solo):** ver quais elementos o resíduo devolve ao solo.
+
+1. O resíduo tem **pectina e açúcares** (polissacarídeos) — ou seja, muito **carbono** — e **alcaloides/compostos aminados**, que contêm **nitrogênio**.
+2. Ao se decompor no solo, ele devolve carbono e nitrogênio ao ciclo dos nutrientes, alimentando os organismos e as plantas.
+3. Isso é, na prática, **reciclar carbono e nitrogênio** — a base da fertilidade.
+
+**Resposta: A** (possibilita a reciclagem de carbono e nitrogênio).`,
+  },
+  {
+    year: 2019,
+    index: 101,
+    resposta: "C",
+    markdown: `**Ideia (Biologia — fisiologia):** ligar o efeito do hormônio ao desempenho físico.
+
+1. A EPO estimula a **maturação dos eritrócitos** (as hemácias, células vermelhas do sangue).
+2. Mais hemácias significam mais transporte de **oxigênio** para os músculos.
+3. Com mais oxigênio, as células fazem mais **respiração celular**, produzindo mais **ATP** (a "moeda de energia") — daí a maior resistência física.
+
+**Resposta: C** (oxigênio, para aumento da produção de ATP).`,
+  },
+  {
+    year: 2019,
+    index: 102,
+    resposta: "B",
+    markdown: `**Ideia (Física — condução de calor):** o gelo derretido mede o calor que entrou. Como a espessura e a diferença de temperatura são iguais, o calor é proporcional a **k · A** (condutividade × área das faces).
+
+1. **Área das faces do A** (cubo 40×40×40): 6 faces de 40·40 = 1600 → 6·1600 = **9 600 cm²**.
+2. **Área das faces do B** (60×40×40): 2·(60·40) + 2·(60·40) + 2·(40·40) = 4800 + 4800 + 3200 = **12 800 cm²**.
+3. Derreteu o **dobro** no B: k_B · A_B = 2 · (k_A · A_A) → k_B · 12 800 = 2 · k_A · 9 600 = 19 200 · k_A.
+4. Logo k_A / k_B = 12 800 / 19 200 = **0,67**.
+
+**Resposta: B** (≈ 0,67).`,
+  },
+  {
+    year: 2019,
+    index: 105,
+    resposta: "D",
+    markdown: `**Ideia (Química — modelo atômico):** entender por que um metal na chama emite luz colorida.
+
+1. O calor da chama dá energia aos elétrons, que "sobem" para níveis mais externos (ficam **excitados**).
+2. Esses elétrons são instáveis lá em cima e **voltam** para um nível mais interno.
+3. Ao voltar (descer de nível), o elétron **libera** a energia na forma de luz (radiação eletromagnética) — a cor característica de cada metal.
+
+**Resposta: D** (transição eletrônica de um nível mais externo para outro mais interno). *Cuidado:* absorver energia é subir; **emitir** luz é descer.`,
+  },
+  {
+    year: 2019,
+    index: 107,
+    resposta: "B",
+    markdown: `**Ideia (Biologia):** dar nome ao movimento em resposta à **luz**.
+
+1. As larvas se movem **em direção à lâmpada** (à luz).
+2. Movimento orientado pela luz é **fototropismo** ("foto" = luz). Como é **em direção** ao estímulo, é **positivo**.
+3. Não é geotropismo (gravidade), hidrotropismo (água), termotropismo (calor) nem quimiotropismo (substância química).
+
+**Resposta: B** (fototropismo positivo).`,
+  },
+  {
+    year: 2019,
+    index: 110,
+    resposta: "D",
+    markdown: `**Ideia (Biologia — genética):** por que a "distribuição independente" de Mendel nem sempre vale?
+
+1. Mendel supôs que cada par de genes se separa de forma **independente** dos outros.
+2. Hoje sabemos que genes que ficam **fisicamente próximos no mesmo cromossomo** costumam ser herdados **juntos** (fenômeno chamado ligação gênica).
+3. Nesse caso, eles não se distribuem de forma independente — daí a exceção à lei.
+
+**Resposta: D** (genes próximos no mesmo cromossomo tendem a ser herdados juntos).`,
+  },
+  {
+    year: 2019,
+    index: 111,
+    resposta: "A",
+    markdown: `**Ideia (Física — impulso):** a força do impacto é a variação da quantidade de movimento dividida pelo tempo. Comparar com o peso de um tijolo.
+
+1. **Velocidade ao chegar** (queda de 5 m): v = √(2·g·h) = √(2·10·5) = √100 = **10 m/s**.
+2. **Quantidade de movimento** ao bater: p = m·v = 2,5 · 10 = 25 kg·m/s.
+3. **Força média do impacto:** F = p / tempo = 25 ÷ 0,5 = **50 N**.
+4. **Peso de um tijolo:** P = m·g = 2,5 · 10 = **25 N**.
+5. Quantos pesos? 50 ÷ 25 = **2**.
+
+**Resposta: A** (equivale ao peso de 2 tijolos).`,
+  },
+  {
+    year: 2019,
+    index: 114,
+    resposta: "E",
+    markdown: `**Ideia (Biologia — vírus):** que tecnologia ajuda a **tratar** infecções por retrovírus.
+
+1. Retrovírus (como o HIV) se reproduzem dentro das células usando o material genético da própria célula.
+2. Os remédios que ajudam no tratamento são os **antirretrovirais**, que **dificultam a reprodução** do vírus dentro do corpo.
+3. Não são vacinas (essas previnem, não tratam) nem controle de vetores (o texto diz que esses vírus não usam vetores).
+
+**Resposta: E** (antirretrovirais que dificultam a reprodução do vírus).`,
+  },
+  {
+    year: 2019,
+    index: 115,
+    resposta: "A",
+    markdown: `**Ideia (Química/ambiente):** ver qual material o concreto reciclado **substitui**.
+
+1. O texto diz que o concreto reciclado moído entra no lugar do **particulado rochoso graúdo** — ou seja, da **brita**.
+2. Se usamos concreto reciclado no lugar da brita, extraímos **menos brita** da natureza.
+3. Areia, água e cimento continuam sendo usados normalmente; o que é poupado é a brita.
+
+**Resposta: A** (redução da extração da brita).`,
+  },
+  {
+    year: 2019,
+    index: 127,
+    resposta: "E",
+    markdown: `**Ideia (Biologia — mitocôndria):** entender por que "vazar" prótons faz emagrecer.
+
+1. Normalmente, os prótons (H⁺) voltam à matriz **passando pela enzima** que fabrica **ATP** (a energia da célula).
+2. O DNP leva os prótons de volta por **fora** dessa enzima. Sem esse fluxo pela enzima, produz-se **menos ATP**.
+3. Com pouca energia pronta, a célula **queima mais nutrientes** (gorduras e açúcares) tentando compensar — por isso o efeito emagrecedor (perigoso e proibido).
+
+**Resposta: E** (redução da produção de ATP, com maior gasto celular de nutrientes).`,
+  },
+  {
+    year: 2019,
+    index: 21,
+    resposta: "D",
+    markdown: `**Ideia (interpretação):** a cena é vista pelos **olhos de uma criança** que ouve/pergunta o que é "desquitada".
+
+1. "Desquitada" era, nos anos 1960, uma palavra carregada de **estigma social** (a mulher separada era malvista).
+2. A tensão do texto nasce de a menina esbarrar nesse tabu sem entendê-lo — a carga social chega filtrada pela **perspectiva infantil**.
+3. Por isso a dramaticidade está na **representação de estigmas sociais modulados pelo olhar da criança**, não em ausência do pai (A) nem em abandono (E), que o texto não sustenta.
+
+**Resposta: D**.`,
+  },
+  {
+    year: 2019,
+    index: 46,
+    resposta: "B",
+    markdown: `**Ideia (Geografia física):** separar processos **internos** (endógenos) dos **externos** (exógenos) da Terra.
+
+1. Processos **endógenos** vêm de dentro do planeta: vulcanismo (eruptivo, magmático), tectônica, metamorfismo. O ser humano **não** controla isso.
+2. Processos **exógenos** agem na superfície: erosão, sedimentação, clima. É aí que a ação humana (poluição, desmatamento) interfere pesadamente.
+3. O "Antropoceno" nomeia justamente a força humana sobre esses processos de superfície → **exógenos**.
+
+**Resposta: B** (exógenos).`,
+  },
+  {
+    year: 2019,
+    index: 48,
+    resposta: "C",
+    markdown: `**Ideia (Filosofia):** identificar a corrente que separa o ser humano da natureza, tratando-a como recurso.
+
+1. O texto mostra a natureza vista como **objeto a ser explorado** — algo separado do homem, à disposição da razão humana.
+2. Essa visão é a do **racionalismo cartesiano** (Descartes): o sujeito pensante de um lado, a natureza como matéria/recurso do outro, a ser dominada pela razão.
+3. Não combina com relativismo, materialismo dialético (Marx) nem existencialismo, que partem de outras premissas.
+
+**Resposta: C** (racionalismo cartesiano).`,
+  },
+  {
+    year: 2019,
+    index: 49,
+    resposta: "C",
+    markdown: `**Ideia (ecologia aplicada):** achar a solução que combate as pragas **sem** o veneno que mata as abelhas.
+
+1. O problema é o **agrotóxico** (inseticida) matando os polinizadores.
+2. O **controle biológico** usa inimigos naturais das pragas (outros insetos, fungos) no lugar do veneno — protege as abelhas e mantém a produção.
+3. As demais (monocultura, adubação química, drenagem) não resolvem a intoxicação, e algumas até pioram.
+
+**Resposta: C** (controle biológico).`,
+  },
+  {
+    year: 2019,
+    index: 50,
+    resposta: "C",
+    markdown: `**Ideia (Filosofia — alteridade):** entender o que Derrida chama de hospitalidade no contexto migratório.
+
+1. Hospitalidade pura = **acolher o outro** antes de impor condições, reconhecendo-o como pessoa (até seu nome).
+2. "Alteridade" é o reconhecimento do outro como diferente e legítimo. Acolher assim é **incorporar a alteridade**.
+3. O oposto seria anular a diferença (A) ou controlar a origem (E) — justamente o que o texto critica.
+
+**Resposta: C** (incorporação da alteridade).`,
+  },
+  {
+    year: 2019,
+    index: 51,
+    resposta: "B",
+    markdown: `**Ideia (Filosofia do Direito):** resumir a definição dada.
+
+1. O texto define o Direito como a **técnica da coexistência humana** — regras para os homens viverem juntos.
+2. Isso é, em palavras simples, **regular o convívio social**.
+3. Aplicar códigos (A) ou legitimar decisões políticas (C) são consequências ou usos, não o "sentido geral e fundamental" apontado.
+
+**Resposta: B** (regulação do convívio social).`,
+  },
+  {
+    year: 2019,
+    index: 52,
+    resposta: "A",
+    markdown: `**Ideia (História — espaço atlântico):** o que a farinha de mandioca atravessando o Atlântico exemplifica.
+
+1. A mandioca era saber **indígena**; com a colonização, a farinha se espalhou pela colônia e **cruzou o Atlântico** até os mercados africanos.
+2. Um alimento que viaja e é adotado em outra região é um caso de **difusão de hábitos alimentares**.
+3. Não se trata de rituais, oferendas ou costumes guerreiros — o foco do texto é o **alimento** circulando.
+
+**Resposta: A** (difusão de hábitos alimentares).`,
+  },
+  {
+    year: 2019,
+    index: 53,
+    resposta: "B",
+    markdown: `**Ideia (Geopolítica):** achar a característica **comum** a Brasil, Alemanha, Japão e Índia que justifica a vaga na ONU.
+
+1. Esses países são muito diferentes em território e recursos, então não é área (A) nem minérios (E).
+2. O que todos têm em comum é serem **potências de destaque em suas regiões** — lideranças regionais (América do Sul, Europa, Ásia).
+3. Esse **protagonismo em escala regional** é o argumento para pleitear assento permanente.
+
+**Resposta: B** (protagonismo em escala regional).`,
+  },
+  {
+    year: 2019,
+    index: 54,
+    resposta: "B",
+    markdown: `**Ideia (História — Inglaterra séc. XIX):** identificar o processo contra o qual os camponeses se revoltavam.
+
+1. As falas ("nós só queríamos algumas batatas") mostram gente que **perdeu o acesso à terra** de onde tirava sustento.
+2. Na Inglaterra, os **cercamentos** privatizaram as antigas **terras comunais** (de uso coletivo), expulsando os camponeses.
+3. A revolta (Capitão Swing) foi reação a essa **expropriação das terras comunais**.
+
+**Resposta: B** (expropriação das terras comunais).`,
+  },
+  {
+    year: 2019,
+    index: 55,
+    resposta: "A",
+    markdown: `**Ideia (História — Independência):** por que o caso de Maria Quitéria é emblemático.
+
+1. Havia **proibição** de mulheres nos batalhões; por isso ela teve de **se disfarçar de homem** para lutar.
+2. A necessidade de esconder o gênero para participar revela o quanto a **estrutura social era rígida e hierárquica** na definição dos papéis.
+3. Por isso o caso evidencia essa **rigidez hierárquica** — e não uma suposta abertura às mulheres nos quartéis (que, ao contrário, eram vetadas).
+
+**Resposta: A** (rigidez hierárquica da estrutura social).`,
+  },
+  {
+    year: 2019,
+    index: 1,
+    language: "ingles",
+    resposta: "B",
+    markdown: `**Ideia (Inglês — intenção do texto):** para que servem as expressões *research*, *a growing number of studies*, *several studies*?
+
+1. O texto lista benefícios de ter um bicho de estimação (baixa a pressão, reduz ansiedade etc.).
+2. Citar "pesquisas" e "vários estudos" serve para dar **autoridade** ao que se afirma — é uma estratégia de **convencimento**.
+3. Logo, a autora quer **convencer sobre os benefícios de adotar um pet para a saúde** — não foca só em alergias (A) ou em relações amorosas (C).
+
+**Resposta: B**.`,
+  },
+  {
+    year: 2019,
+    index: 1,
+    language: "espanhol",
+    resposta: "A",
+    markdown: `**Ideia (Espanhol — interpretação):** o que o poeta reflete em "soy de la raza mora... árabe español"?
+
+1. Ele se diz da "raza mora" (moura/árabe) e, ao mesmo tempo, "árabe español" — mistura duas origens numa só identidade.
+2. Isso expressa uma **identidade plural**, formada por mais de uma herança cultural.
+3. Não fala de perda (C) nem de dívida de um povo com outro (D); fala de **quem ele é**, feito de várias raízes.
+
+**Resposta: A** (formação identitária plural).`,
+  },
+  {
+    year: 2019,
+    index: 2,
+    language: "ingles",
+    resposta: "D",
+    markdown: `**Ideia (Inglês — posição do autor):** carta sobre obesidade e açúcar.
+
+1. O autor critica "demonizar" um único ingrediente (o açúcar) e mostra dados de que as calorias vieram sobretudo de gorduras e farinhas.
+2. No fim ele diz: "we need to continue to study the obesity epidemic" — precisamos continuar estudando.
+3. Ou seja, ele **indica a necessidade de mais pesquisas** — não libera o açúcar (A) nem culpa a gordura como vilã única (B).
+
+**Resposta: D** (necessidade de mais pesquisas sobre o assunto).`,
+  },
+  {
+    year: 2019,
+    index: 2,
+    language: "espanhol",
+    resposta: "B",
+    markdown: `**Ideia (Espanhol — sentido de expressão):** o que quer dizer *dejar su huella*?
+
+1. Literalmente, "deixar sua marca". O texto diz que a Geração Y quer "dejar su huella en la historia... cambiar el mundo".
+2. "Deixar a marca na história / mudar o mundo" = **fazer a diferença no mundo**.
+3. Conhecer lugares (A) e ter boa formação (D) aparecem no texto, mas não são o sentido dessa expressão específica.
+
+**Resposta: B** (fazer a diferença no mundo).`,
+  },
+  {
+    year: 2019,
+    index: 3,
+    language: "espanhol",
+    resposta: "C",
+    markdown: `**Ideia (Espanhol — função do texto):** por que a fábula da cigarra e da formiga é retomada?
+
+1. Depois de citar a fábula, o texto traz **fatos reais de biologia**: formigas cortadeiras "agricultoras", as mais velhas assumindo tarefas de risco, as cigarras que cantam e se alimentam da seiva.
+2. O objetivo não é dar uma lição moral (A), e sim **descrever o comportamento real dos insetos na natureza**.
+3. Ele até relativiza o estereótipo (a cigarra não é preguiçosa), então não reforça o clichê (B).
+
+**Resposta: C** (descrever o comportamento dos insetos na natureza).`,
+  },
+  {
+    year: 2019,
+    index: 3,
+    language: "ingles",
+    resposta: "A",
+    markdown: `**Ideia (Inglês — interpretação de canção):** qual a causa do sofrimento?
+
+1. A letra fala de um amigo "only twenty-three, gone before he had his time" (foi-se antes da hora) e "didn't have a chance to say goodbye".
+2. Isso descreve a **morte precoce de um amigo jovem**.
+3. Não é fim de namoro (B) nem mudança de país (C) — o texto fala de partida/morte.
+
+**Resposta: A** (morte precoce de um amigo jovem).`,
+  },
+  {
+    year: 2019,
+    index: 18,
+    resposta: "A",
+    markdown: `**Ideia (Linguagens — tecnologia e sociedade):** por que o software livre ajuda a produzir conhecimento?
+
+1. O texto diz que ele é feito de forma **colaborativa**, com **código aberto**, para a comunidade aperfeiçoar e devolver.
+2. Sendo aberto e coletivo, ele **democratiza o acesso** a algo construído por muitos.
+3. Não se trata de coletar dados confidenciais (D) nem de empregar hackers (E) — o ponto é o acesso coletivo e livre.
+
+**Resposta: A** (democratiza o acesso a produtos construídos coletivamente).`,
+  },
+  {
+    year: 2019,
+    index: 19,
+    resposta: "E",
+    markdown: `**Ideia (Linguagens — mídias):** qual o impacto do "sharenting" (pais expondo os filhos)?
+
+1. O texto alerta que a criança não participa da decisão de publicar suas fotos e, ao crescer, "sua privacidade pode já estar violada".
+2. Ou seja, o impacto destacado é o **desrespeito à intimidade das crianças** expostas nas redes.
+3. Não fala de distanciamento (C) nem de fortalecimento de laços (D) como o ponto central; o foco é a **privacidade**.
+
+**Resposta: E** (desrespeito à intimidade das crianças).`,
+  },
+  {
+    year: 2019,
+    index: 20,
+    resposta: "C",
+    markdown: `**Ideia (Linguagens — tecnologia):** o que a plataforma DataViva possibilita?
+
+1. Ela reúne dados oficiais (exportações, ocupações, salários, perfil da população) de forma interativa.
+2. Com poucos cliques o usuário **acessa informações úteis para decisões** — ou seja, **obtém informações estratégicas**.
+3. Não é auditoria de governo (A) nem comunicação entre órgãos (E); é acesso do cidadão a dados estratégicos.
+
+**Resposta: C** (obtenção de informações estratégicas).`,
+  },
+  {
+    year: 2019,
+    index: 22,
+    resposta: "A",
+    markdown: `**Ideia (Linguagens — poema):** que atitude feminina o poema metaforiza?
+
+1. A "ouriça" primeiro se **eriça** (espinhos, metal armado) — postura dura, defensiva e até agressiva.
+2. Quando quem se aproxima é bem-vindo, ela "se desouriça": os espinhos viram carne côncava, as molas do assalto viram molas "para o abraço".
+3. Ou seja, a **dureza (tenacidade) se transforma em brandura** (delicadeza) diante do desejado.
+
+**Resposta: A** (tenacidade transformada em brandura).`,
+  },
+  {
+    year: 2019,
+    index: 24,
+    resposta: "C",
+    markdown: `**Ideia (Linguagens — sequência textual):** por que a letra se identifica com a **ladainha**?
+
+1. A ladainha é uma reza em que se **convoca/pede** repetidamente ("Vamos pedir piedade / Senhor, piedade").
+2. Esse chamado ao interlocutor, com verbos que convidam à ação, é a marca da **sequência injuntiva** (a que ordena, pede, convoca).
+3. Não é narrativa (não conta ações em cadeia) nem descritiva; é o apelo repetido que a define.
+
+**Resposta: C** (injuntiva, por chamar o interlocutor à participação).`,
+  },
+  {
+    year: 2019,
+    index: 25,
+    resposta: "B",
+    markdown: `**Ideia (Linguagens — cultura):** o que o desfile marca?
+
+1. Uma escola de **samba** (Unidos da Tijuca) homenageia Luiz Gonzaga, o rei do **baião** (música nordestina).
+2. Juntar samba e baião num mesmo enredo é uma **inter-relação entre dois gêneros musicais brasileiros**.
+3. Não há primazia de um sobre o outro (A); há **encontro** dos dois.
+
+**Resposta: B** (inter-relação entre dois gêneros musicais brasileiros).`,
   },
 ];

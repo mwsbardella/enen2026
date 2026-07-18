@@ -23,6 +23,8 @@ export const humanasMateriais: MaterialSeed[] = [
     titulo: "Trabalho, economia e industrialização",
     resumoMarkdown: `## Trabalho, economia e industrialização
 
+**Começando do zero:** "Mundo do trabalho" é só um jeito elegante de dizer *como as pessoas ganham a vida* — e isso mudou muito ao longo da história. Antes das fábricas, um sapateiro fazia o sapato inteiro, do começo ao fim, no seu próprio ritmo. Depois vieram as fábricas e as máquinas: cada pessoa passou a fazer só um pedacinho, repetindo o mesmo gesto o dia todo, no ritmo da esteira (pense na linha de montagem de um carro). Hoje muita gente trabalha por aplicativo, sem carteira assinada e sem horário fixo. A ideia central é: *cada jeito de trabalhar muda a vida de quem trabalha* — quem manda, quanto se ganha, quanta liberdade se tem.
+
 É o tema **mais recorrente** de Humanas no ENEM recente. As questões quase nunca cobram "decoreba": partem de um texto (sociológico, histórico ou econômico) e pedem para relacionar uma **transformação no mundo do trabalho** a suas causas e consequências sociais.
 
 **O que mais cai:**
@@ -41,6 +43,8 @@ export const humanasMateriais: MaterialSeed[] = [
     topicSlug: "hum-filosofia",
     titulo: "Filosofia: ética, política e conhecimento",
     resumoMarkdown: `## Filosofia: ética, política e conhecimento
+
+**Começando do zero:** Filosofia é a arte de *parar e perguntar o porquê* de coisas que a gente acha óbvias: por que devo obedecer às leis? o que é agir certo? como sei que algo é verdade? Cada filósofo foi uma pessoa que tentou responder uma dessas perguntas com um argumento bem pensado. No ENEM você não precisa decorar a biografia do filósofo — precisa ler um trechinho do que ele defendia e entender *qual é a ideia central*, como quem resume, com suas palavras, a opinião de alguém depois de ouvir com atenção.
 
 Tema de altíssima incidência. O ENEM apresenta um **trecho de um filósofo** e pede para identificar a tese central. Não exige biografia — exige **entender o conceito** no texto.
 
@@ -61,6 +65,8 @@ Tema de altíssima incidência. O ENEM apresenta um **trecho de um filósofo** e
     titulo: "Urbanização e população",
     resumoMarkdown: `## Urbanização e população
 
+**Começando do zero:** Urbanização é o nome do processo em que *as pessoas saem do campo e vão morar nas cidades*. No Brasil isso aconteceu muito rápido, em poucas décadas do século XX: famílias inteiras deixaram a roça em busca de emprego na indústria. O problema é que a cidade cresceu depressa demais e sem planejamento — daí vêm as favelas, o trânsito, a falta de saneamento e a distância entre bairros ricos e pobres. É como uma casa que recebe visitas demais de uma vez só e não tem cama, comida nem banheiro para todos.
+
 A cidade é cenário constante das questões. O recorte preferido da banca é a **urbanização desigual** brasileira e seus problemas socioespaciais.
 
 **O que mais cai:**
@@ -79,6 +85,8 @@ A cidade é cenário constante das questões. O recorte preferido da banca é a 
     topicSlug: "hum-sociologia",
     titulo: "Sociologia: cultura e movimentos sociais",
     resumoMarkdown: `## Sociologia: cultura e movimentos sociais
+
+**Começando do zero:** Sociologia estuda *a vida em grupo* — como a sociedade molda o nosso jeito de pensar, nossos costumes e as desigualdades entre as pessoas. Aqui entram temas como cultura (nossos hábitos, festas, crenças, comidas) e os movimentos sociais (grupos que se organizam para lutar por direitos, como o movimento negro, o feminista ou o dos trabalhadores sem-terra). A ideia-chave que o ENEM adora: muita coisa que parece "natural" ou "sempre foi assim" na verdade foi *construída pela sociedade* — e, por isso, pode ser questionada e mudada.
 
 A Sociologia no ENEM é fortemente **crítica e identitária**, valorizando diversidade e direitos.
 
@@ -99,6 +107,8 @@ A Sociologia no ENEM é fortemente **crítica e identitária**, valorizando dive
     titulo: "Cidadania, direitos e Estado",
     resumoMarkdown: `## Cidadania, direitos e Estado
 
+**Começando do zero:** Cidadania é o *conjunto de direitos e deveres* que você tem por fazer parte de um país — poder votar, estudar, ser atendido na saúde, ser tratado com igualdade perante a lei. Esses direitos não caíram do céu: foram conquistados aos poucos, com muita luta ao longo da história. O Estado (o governo e suas instituições) é quem deveria garantir tudo isso. Pense na **Constituição de 1988** como o grande "contrato" que lista o que o país promete a cada pessoa. É, de longe, o tema de Humanas mais próximo do **Direito**.
+
 Tema central e transversal — conecta História, Sociologia e atualidades. É também o eixo onde aparece o conteúdo mais próximo do **Direito**.
 
 **O que mais cai:**
@@ -117,6 +127,8 @@ Tema central e transversal — conecta História, Sociologia e atualidades. É t
     topicSlug: "hum-ambiente",
     titulo: "Geografia física e meio ambiente",
     resumoMarkdown: `## Geografia física e meio ambiente
+
+**Começando do zero:** Este tema trata da *relação entre a natureza e a ação humana*: como aquilo que fazemos (desmatar, poluir, construir, minerar) afeta o clima, os rios, o solo e as florestas — e como esse estrago volta para nos atingir, na forma de secas, enchentes e falta de água. Pense na Terra como a nossa casa: se a gente vai sujando e estragando aos poucos, uma hora falta água na torneira e o ar fica ruim de respirar. O ENEM sempre cobra o **equilíbrio** entre *produzir/crescer* de um lado e *preservar* de outro.
 
 O ENEM aborda o meio ambiente de forma **aplicada e crítica**, ligando processos naturais à ação humana e à sustentabilidade.
 
@@ -138,6 +150,8 @@ O ENEM aborda o meio ambiente de forma **aplicada e crítica**, ligando processo
     titulo: "Geografia agrária e questão da terra",
     resumoMarkdown: `## Geografia agrária e questão da terra
 
+**Começando do zero:** Geografia agrária é o estudo do *campo* — quem é dono da terra e como se produz o alimento. No Brasil, poucas pessoas concentram muita terra (o chamado latifúndio), uma herança que vem lá da colônia. De um lado está o **agronegócio**, enorme e voltado à exportação (soja, boi, milho); do outro, a **agricultura familiar**, que coloca boa parte da comida no prato do brasileiro. É como comparar uma fazenda gigante que planta soja para vender lá fora com o pequeno sítio que abastece a feira da cidade. A "questão da terra" é justamente a tensão entre esses dois mundos.
+
 O campo brasileiro aparece pela ótica da **concentração fundiária** e do contraste entre agronegócio e agricultura familiar.
 
 **O que mais cai:**
@@ -156,6 +170,8 @@ O campo brasileiro aparece pela ótica da **concentração fundiária** e do con
     topicSlug: "hum-colonia",
     titulo: "Brasil Colônia e escravidão",
     resumoMarkdown: `## Brasil Colônia e escravidão
+
+**Começando do zero:** Este é o Brasil dos primeiros séculos (de 1500 a 1822), quando o país era uma *colônia* de Portugal — ou seja, existia para dar lucro à metrópole, produzindo açúcar e, depois, ouro. A mão de obra era de pessoas africanas escravizadas, trazidas à força e tratadas com enorme violência. Mas é fundamental entender: elas **nunca foram passivas** — fugiam, formavam quilombos (como o de Palmares, de Zumbi) e mantinham vivas suas culturas e religiões. Compreender esse período ajuda a explicar boa parte da desigualdade racial que o Brasil carrega até hoje.
 
 Base da formação do Brasil e tema sempre presente, com forte ênfase na **escravidão e na resistência**.
 
@@ -176,6 +192,8 @@ Base da formação do Brasil e tema sempre presente, com forte ênfase na **escr
     titulo: "Globalização e geopolítica",
     resumoMarkdown: `## Globalização e geopolítica
 
+**Começando do zero:** Globalização é o nome de como o mundo ficou *interligado*: produtos, dinheiro, informação e pessoas circulam entre os países como nunca antes na história. Um exemplo simples: o celular que você usa foi projetado num país, montado em outro e vendido no Brasil — isso é globalização em ação. O detalhe importante é que essa conexão **não é justa para todos**: alguns países e grandes empresas ganham muito, enquanto outros ficam para trás. Geopolítica, por sua vez, é a disputa de poder entre as nações dentro desse jogo — quem manda, quem tem os recursos, quem decide.
+
 Tema que conecta economia, política e território em escala mundial.
 
 **O que mais cai:**
@@ -194,6 +212,8 @@ Tema que conecta economia, política e território em escala mundial.
     topicSlug: "hum-imperio",
     titulo: "Império e Primeira República",
     resumoMarkdown: `## Império e Primeira República
+
+**Começando do zero:** Depois de se tornar independente em 1822, o Brasil passou primeiro por um *Império* (governado por dom Pedro I e depois por dom Pedro II) e, a partir de 1889, pela *Primeira República*. É o período em que o país foi montando o seu governo — mas com a política nas mãos de bem poucos: os grandes fazendeiros de café é que mandavam, o voto era controlado (o famoso "voto de cabresto", em que o coronel dizia em quem votar) e a maioria do povo ficava de fora das decisões. Pense num clube que se diz "de todos", mas onde só uns poucos sócios podem votar e decidir.
 
 Do Brasil independente à República Velha — período de construção do Estado nacional.
 
@@ -214,6 +234,8 @@ Do Brasil independente à República Velha — período de construção do Estad
     titulo: "História mundial contemporânea",
     resumoMarkdown: `## História mundial contemporânea
 
+**Começando do zero:** Aqui estão os grandes acontecimentos do mundo nos últimos dois séculos: as duas Guerras Mundiais; o nazismo e o fascismo (regimes autoritários que causaram horrores, como o Holocausto, o extermínio de milhões de judeus e outros grupos); e a Guerra Fria (a disputa entre Estados Unidos e União Soviética, capitalismo contra socialismo, que dividiu o planeta em dois lados por décadas). Não é preciso decorar todas as datas: o que o ENEM quer é que você entenda *que ideia estava em jogo* em cada conflito e por que ele mudou o mundo.
+
 Grandes processos do mundo nos séculos XIX–XX.
 
 **O que mais cai:**
@@ -233,6 +255,8 @@ Grandes processos do mundo nos séculos XIX–XX.
     titulo: "Era Vargas e populismo",
     resumoMarkdown: `## Era Vargas e populismo
 
+**Começando do zero:** Getúlio Vargas foi o político que mais marcou o Brasil no século XX, governando por muitos anos a partir de 1930. Ele criou boa parte dos direitos do trabalhador que conhecemos hoje — como a carteira de trabalho assinada, as férias e o salário mínimo (reunidos na CLT). Mas atenção: por um período ele também governou como **ditador**, com censura e muita propaganda a seu favor. É essa a "dupla face" que o ENEM cobra: ele *deu* direitos ao povo *e*, ao mesmo tempo, usou isso para se manter no poder e controlar os trabalhadores. "Populismo" é justamente essa relação direta e sedutora entre um líder carismático e "o povo".
+
 Período-chave da formação do Brasil moderno (1930–1945 e o retorno em 1951–1954).
 
 **O que mais cai:**
@@ -251,6 +275,8 @@ Período-chave da formação do Brasil moderno (1930–1945 e o retorno em 1951�
     topicSlug: "hum-ditadura",
     titulo: "Ditadura militar e redemocratização",
     resumoMarkdown: `## Ditadura militar e redemocratização
+
+**Começando do zero:** Entre 1964 e 1985, o Brasil viveu uma *ditadura militar*: os militares tomaram o poder e governaram sem eleições livres, com censura à imprensa, perseguição, prisões e tortura de quem se opunha ao regime. Aos poucos, a sociedade foi lutando pela volta da democracia — o movimento "Diretas Já" pedia o direito de eleger o presidente pelo voto — até chegar à **Constituição de 1988**. Este tema mostra, na prática, *por que a democracia e os direitos são tão valiosos*: dá para entender o valor deles justamente vendo o que acontece quando eles desaparecem.
 
 O regime militar (1964–1985) e a volta da democracia — tema sensível e muito ligado à cidadania.
 

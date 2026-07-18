@@ -48,3 +48,7 @@ next-env.d.ts
 # enem assets baixados na importação (gerados, podem ser grandes)
 /public/enem-assets/*
 !/public/enem-assets/.gitkeep
+
+# pacote portátil offline (gerado) e Node embutido baixado
+/dist-portable/
+/tools/node-win/

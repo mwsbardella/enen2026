@@ -11,6 +11,8 @@ export const redacaoTopics: TopicSeed[] = [
       titulo: "Estrutura dissertativo-argumentativa",
       resumoMarkdown: `## A estrutura da redação do ENEM
 
+**Começando do zero:** "Dissertativo-argumentativo" assusta, mas é simples: é um texto em que você *defende uma opinião com argumentos* — como quando tenta convencer alguém de que está certo, só que por escrito e de forma organizada. Não é para contar uma história (isso é narração) nem para descrever algo: é para *tomar um lado* sobre o tema e sustentá-lo. E, no fim, o ENEM ainda pede uma "proposta de intervenção", ou seja, uma sugestão concreta de como resolver o problema.
+
 A redação do ENEM é um texto **dissertativo-argumentativo em prosa**: você precisa **defender um ponto de vista** sobre o tema proposto, com argumentos e repertório, e apresentar uma **proposta de intervenção**. O texto ideal tem **4 parágrafos** e cerca de **25 a 30 linhas** (mínimo de 7 linhas; mais de 30 não cabe).
 
 **1) Introdução (1 parágrafo):**
@@ -50,6 +52,8 @@ A redação do ENEM é um texto **dissertativo-argumentativo em prosa**: você p
       titulo: "As 5 competências do ENEM",
       resumoMarkdown: `## As 5 competências (0 a 200 cada, total 1000)
 
+**Começando do zero:** Sua redação não recebe uma nota única jogada de qualquer jeito: ela é avaliada em cinco quesitos separados (as "competências"), cada um valendo até 200 pontos, que somados dão os 1000. Pense num boletim com cinco matérias — para tirar a nota máxima, é preciso ir bem em todas ao mesmo tempo. Saber o que cada uma cobra é saber exatamente onde o corretor vai olhar.
+
 A redação é corrigida por **cinco competências**, cada uma de **0 a 200 pontos** (níveis de 0, 40, 80, 120, 160, 200). Entender cada uma é entender o que os corretores procuram.
 
 **Competência 1 — Domínio da norma culta da língua escrita.**
@@ -85,6 +89,8 @@ Avalia uma proposta **completa, detalhada e exequível** para o problema, com os
       titulo: "Proposta de intervenção",
       resumoMarkdown: `## Proposta de intervenção (Competência 5)
 
+**Começando do zero:** A proposta de intervenção é a parte final da redação em que você *sugere uma solução* para o problema que discutiu — não basta apontar o que está errado, é preciso dizer o que fazer. E ela não pode ser vaga ("o governo deveria ajudar"): tem que deixar claro *quem* faz, *o que* faz, *como*, *para quê* e ainda dar um detalhe. É essa parte bem-feita que mais separa uma redação boa de uma nota máxima.
+
 A **proposta de intervenção** é o desfecho da redação: uma solução **concreta, detalhada e viável** para o problema discutido, **respeitando os direitos humanos**. É o que mais diferencia uma redação boa de uma nota 1000. Ela deve conter **5 elementos**:
 
 1. **Agente** — *quem* vai executar a ação? (Ministério da Educação, governos, escolas, mídia, ONGs, família, sociedade civil, Poder Legislativo...). Seja específico.
@@ -115,6 +121,8 @@ A **proposta de intervenção** é o desfecho da redação: uma solução **conc
     material: {
       titulo: "Construção de repertório sociocultural",
       resumoMarkdown: `## Repertório sociocultural
+
+**Começando do zero:** "Repertório" é só um nome chique para *o conhecimento que você traz de fora para dar peso ao seu argumento*: uma lei, um fato histórico, um dado de pesquisa, um livro ou um filme. É a diferença entre dizer "isso é um problema" e dizer "isso é um problema — tanto que a Constituição de 1988 garante o contrário": a segunda frase convence muito mais. Mas atenção: o repertório só vale ponto se estiver *bem encaixado* no tema, e não jogado ali só para enfeitar.
 
 **Repertório** é o conhecimento que você usa para **fundamentar os argumentos** (Competência 2). Para pontuar, ele precisa ser **legitimado** (de fonte reconhecida) e **produtivo** (bem articulado ao tema, não apenas citado).
 
@@ -153,6 +161,8 @@ A **proposta de intervenção** é o desfecho da redação: uma solução **conc
     material: {
       titulo: "O que zera (ou derruba) a redação",
       resumoMarkdown: `## O que zera a redação do ENEM
+
+**Começando do zero:** Antes de aprender a tirar nota alta, vale conhecer as armadilhas que zeram tudo — porque não adianta escrever bem e cair numa delas. Zerar a redação significa perder os 1000 pontos de uma vez só, mesmo que o texto esteja bonito. A boa notícia é que quase todas essas causas são fáceis de evitar quando você as conhece de antemão.
 
 Conhecer as causas de **nota zero** é tão importante quanto saber escrever bem. A redação recebe **0** nas seguintes situações (segundo a cartilha do INEP):
 

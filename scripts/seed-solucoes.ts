@@ -13,9 +13,10 @@ async function main() {
   const semQuestao: string[] = [];
   const gabaritoErrado: string[] = [];
   for (const s of solucoes) {
-    // Casa por ano+número; a maioria das questões de matemática tem language null.
+    // Casa por ano+número; nas questões de língua estrangeira (mesmo nº em duas
+    // versões) usa-se também o language para pegar a versão certa.
     const q = await prisma.question.findFirst({
-      where: { year: s.year, index: s.index },
+      where: { year: s.year, index: s.index, ...(s.language ? { language: s.language } : {}) },
       select: { id: true, correta: true },
     });
     if (!q) {

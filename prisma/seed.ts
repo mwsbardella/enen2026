@@ -18,13 +18,12 @@ import "dotenv/config";
 import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
 import { textoIntegralDe } from "../lib/texto-integral";
-import { inicioCronograma } from "../lib/dates";
+import { regenerarCronograma } from "../lib/cronograma-generator";
 import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "../lib/subjects";
 
 import { redacaoTopics } from "./content/redacao";
 import { books } from "./content/books";
 import { repertorios } from "./content/repertorios";
-import { weeks, type WeekTaskSeed } from "./content/weeks";
 
 // Os assuntos das 4 áreas de questões (Linguagens, Humanas, Matemática, Natureza)
 // vêm da TAXONOMIA por frequência (prisma/content/taxonomy.ts), criados pela
@@ -204,81 +203,12 @@ async function seedExams(): Promise<Record<string, string>> {
   return examBySlug;
 }
 
-type TaskRefResolved = { kind: "topic" | "book" | "exam"; id: string };
-
-async function seedWeeks(
-  examBySlug: Record<string, string>,
-  bookBySlug: Record<string, string>,
-) {
-  const subjects = await prisma.subject.findMany();
-  const subjectIdBySlug = Object.fromEntries(subjects.map((s) => [s.slug, s.id]));
-  const inicio = inicioCronograma();
-
-  // Mapa topic slug -> topic.id (refs {kind:"topic"}). Do BANCO, cobre os tópicos
-  // de redação (seed) e os da taxonomia (classify + seed:materials). A conclusão
-  // "gated" é derivada do progresso do TÓPICO (tipo "topic", refId = topic.id).
-  const topics = await prisma.topic.findMany({ select: { id: true, slug: true } });
-  const topicIdBySlug = Object.fromEntries(topics.map((t) => [t.slug, t.id]));
-
-  function buildRefs(ref: WeekTaskSeed["ref"]): TaskRefResolved[] {
-    switch (ref.kind) {
-      case "material":
-      case "revisar":
-        return ref.slugs
-          .map((slug) => topicIdBySlug[slug])
-          .filter((id): id is string => !!id)
-          .map((id) => ({ kind: "topic", id }));
-      case "book":
-        return ref.slugs
-          .map((slug) => bookBySlug[slug])
-          .filter((id): id is string => !!id)
-          .map((id) => ({ kind: "book", id }));
-      case "exam": {
-        const id = examBySlug[ref.slug];
-        return id ? [{ kind: "exam", id }] : [];
-      }
-      case "redacao":
-        return [];
-    }
-  }
-
-  // Preserva as semanas criadas pelo usuário (origem "usuario"); recria só as
-  // sugeridas. O cascade remove as tarefas das semanas sugeridas apagadas.
-  await prisma.week.deleteMany({ where: { origem: "sugerido" } });
-
-  for (const w of weeks) {
-    const dataInicio = new Date(inicio);
-    dataInicio.setDate(dataInicio.getDate() + (w.numero - 1) * 7);
-    const dataFim = new Date(dataInicio);
-    dataFim.setDate(dataFim.getDate() + 6);
-
-    const week = await prisma.week.create({
-      data: {
-        titulo: `Semana ${w.numero}`,
-        foco: w.foco,
-        ordem: w.numero,
-        origem: "sugerido",
-        dataInicio,
-        dataFim,
-      },
-    });
-
-    let ordem = 0;
-    for (const task of w.tasks) {
-      ordem++;
-      await prisma.weekTask.create({
-        data: {
-          weekId: week.id,
-          subjectId: task.subjectSlug ? subjectIdBySlug[task.subjectSlug] ?? null : null,
-          titulo: task.titulo,
-          ordem,
-          tipo: task.tipo,
-          refs: stringifyJson(buildRefs(task.ref)),
-        },
-      });
-    }
-  }
-  console.log(`✓ Weeks + WeekTasks (${weeks.length} semanas sugeridas)`);
+// As semanas sugeridas são geradas pelo mesmo gerador usado em runtime
+// (lib/cronograma-generator.ts): datadas a partir do tempo que falta para o
+// ENEM e cobrindo todos os blocos canônicos de prisma/content/weeks.ts.
+async function seedWeeks() {
+  const total = await regenerarCronograma();
+  console.log(`✓ Weeks + WeekTasks (${total} semanas sugeridas)`);
 }
 
 async function main() {
@@ -286,10 +216,10 @@ async function main() {
   await seedUser();
   await seedSubjects();
   await seedTopicsAndMaterials();
-  const bookBySlug = await seedBooks();
+  await seedBooks();
   await seedRepertorios();
-  const examBySlug = await seedExams();
-  await seedWeeks(examBySlug, bookBySlug);
+  await seedExams();
+  await seedWeeks();
   console.log("✓ Seed concluído.");
 }
 

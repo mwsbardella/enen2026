@@ -4,6 +4,7 @@ import { ENEM_DIA_1, ENEM_DIA_2, semanaAtualPorData, formatarData } from "@/lib/
 import { enrichTasks } from "@/lib/tasks";
 import Countdown from "@/components/Countdown";
 import TaskList from "@/components/TaskList";
+import ConfigAluno from "@/components/ConfigAluno";
 import { Card, PageTitle } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
@@ -69,6 +70,8 @@ export default async function Dashboard() {
         title={`Olá, ${user?.nome ?? "estudante"} 👋`}
         subtitle="Seu ambiente de estudo ativo para o ENEM 2026."
       />
+
+      <ConfigAluno nomeAtual={user?.nome ?? ""} />
 
       <Card className="bg-gradient-to-br from-surface to-surface-2">
         <p className="text-sm text-muted">Contagem regressiva — 1º dia de prova</p>
