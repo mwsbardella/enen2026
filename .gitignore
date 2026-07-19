@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# EXCEÇÃO: o modelo precisa estar no repositório, senão o `cp .env.example .env`
+# do README falha para quem clona (o schema exige DATABASE_URL).
+!.env.example
 
 # vercel
 .vercel
