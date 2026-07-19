@@ -19,6 +19,7 @@ import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
 import { textoIntegralDe } from "../lib/texto-integral";
 import { regenerarCronograma } from "../lib/cronograma-generator";
+import { comVideos } from "../lib/links";
 import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "../lib/subjects";
 
 import { redacaoTopics } from "./content/redacao";
@@ -79,7 +80,7 @@ async function seedTopicsAndMaterials(): Promise<Record<string, string>> {
         topicId: topic.id,
         titulo: t.material.titulo,
         resumoMarkdown: t.material.resumoMarkdown,
-        links: stringifyJson(t.material.links),
+        links: stringifyJson(comVideos(t.slug, t.material.links)),
       },
     });
     materialByTopicSlug[t.slug] = material.id;
@@ -102,7 +103,7 @@ async function seedBooks(): Promise<Record<string, string>> {
       escola: b.escola,
       temasRedacao: stringifyJson(b.temasRedacao),
       resumoMarkdown: b.resumoMarkdown,
-      links: stringifyJson(b.links),
+      links: stringifyJson(comVideos(b.slug, b.links)),
       textoCompleto,
       ordem: b.ordem,
     };

@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { parseJson } from "@/lib/json";
 import QuestionForm, { type FormQuestion } from "@/components/QuestionForm";
 import { PageTitle } from "@/components/ui";
+import { ehDoIdioma, getIdiomaAluno } from "@/lib/idioma";
 
 export const dynamic = "force-dynamic";
 
@@ -23,15 +24,19 @@ export default async function ResolverProvaPage({
   if (!exam) notFound();
 
   const order = parseJson<string[]>(exam.questionIds, []);
-  const rows = await prisma.question.findMany({
-    where: { id: { in: order } },
-  });
+  const [rows, idioma] = await Promise.all([
+    prisma.question.findMany({ where: { id: { in: order } } }),
+    getIdiomaAluno(),
+  ]);
   const byId = new Map(rows.map((q) => [q.id, q]));
 
-  // Mantém a ordem e NÃO envia o gabarito (correta/isCorrect) ao cliente.
+  // Mantém a ordem, descarta a língua estrangeira que o aluno não faz e NÃO
+  // envia o gabarito (correta/isCorrect) ao cliente. O mesmo filtro de idioma é
+  // aplicado na correção (app/api/attempts/route.ts) — senão as questões
+  // escondidas entrariam no total como erro.
   const questions: FormQuestion[] = order
     .map((qid) => byId.get(qid))
-    .filter((q): q is NonNullable<typeof q> => !!q)
+    .filter((q): q is NonNullable<typeof q> => !!q && ehDoIdioma(q, idioma))
     .map((q) => ({
       id: q.id,
       year: q.year,

@@ -21,6 +21,8 @@
     "seed:books": "tsx scripts/seed-books.ts",
     "seed:solucoes": "tsx scripts/seed-solucoes.ts",
     "check:cronograma": "tsx scripts/check-cronograma.ts",
+    "check:links": "tsx scripts/check-links.ts",
+    "find:videos": "tsx scripts/find-videos.ts",
     "build:portable": "node scripts/build-portable.mjs",
     "postinstall": "prisma generate"
   },

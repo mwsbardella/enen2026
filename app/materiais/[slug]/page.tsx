@@ -45,7 +45,15 @@ export default async function MaterialPage({
     comando: q.comando,
     comentario: q.comentario,
     correta: q.correta,
-    alternativas: parseJson<Alt[]>(q.alternativas, []),
+    // Só os campos exibidos: o JSON do banco pode trazer `isCorrect` por
+    // alternativa, que revelaria o gabarito antes da hora (mesma sanitização
+    // de app/provas/[id]/page.tsx). `correta` vai junto de propósito — é o que
+    // permite revelar no clique sem ida ao servidor.
+    alternativas: parseJson<Alt[]>(q.alternativas, []).map((a) => ({
+      letter: a.letter,
+      text: a.text,
+      file: a.file ?? null,
+    })),
   }));
 
   return (

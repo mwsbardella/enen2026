@@ -3,15 +3,24 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card } from "./ui";
+import { IDIOMAS, IDIOMA_LABEL, type Idioma } from "@/lib/idioma";
 
 const inputCls =
   "w-full rounded-lg border border-border bg-surface-2 px-3 py-2 text-sm outline-none focus:border-primary";
 
-// Card do dashboard: informar o nome do aluno e refazer o cronograma sugerido
-// com base no tempo que falta para o ENEM.
-export default function ConfigAluno({ nomeAtual }: { nomeAtual: string }) {
+// Card do dashboard: informar o nome do aluno e a língua estrangeira que ele vai
+// fazer na prova, e refazer o cronograma sugerido com base no tempo que falta
+// para o ENEM.
+export default function ConfigAluno({
+  nomeAtual,
+  idiomaAtual,
+}: {
+  nomeAtual: string;
+  idiomaAtual: Idioma;
+}) {
   const router = useRouter();
   const [nome, setNome] = useState(nomeAtual);
+  const [idioma, setIdioma] = useState<Idioma>(idiomaAtual);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -19,7 +28,8 @@ export default function ConfigAluno({ nomeAtual }: { nomeAtual: string }) {
     if (busy) return;
     if (
       !confirm(
-        "Isto vai refazer o cronograma sugerido a partir do tempo que falta para o ENEM. " +
+        "Isto vai refazer o cronograma sugerido a partir do tempo que falta para o ENEM, " +
+          `usando ${IDIOMA_LABEL[idioma]} como língua estrangeira. ` +
           "As semanas que você mesmo criou são mantidas. Continuar?",
       )
     ) {
@@ -31,7 +41,7 @@ export default function ConfigAluno({ nomeAtual }: { nomeAtual: string }) {
       const res = await fetch("/api/aluno", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome: nome.trim() || undefined }),
+        body: JSON.stringify({ nome: nome.trim() || undefined, idioma }),
       });
       if (!res.ok) throw new Error("falhou");
       const data = (await res.json()) as { semanas: number };
@@ -58,6 +68,22 @@ export default function ConfigAluno({ nomeAtual }: { nomeAtual: string }) {
             className={inputCls}
           />
         </div>
+        <div className="sm:w-44">
+          <label className="mb-1 block text-xs font-semibold text-muted">
+            Língua estrangeira
+          </label>
+          <select
+            value={idioma}
+            onChange={(e) => setIdioma(e.target.value as Idioma)}
+            className={inputCls}
+          >
+            {IDIOMAS.map((i) => (
+              <option key={i} value={i}>
+                {IDIOMA_LABEL[i]}
+              </option>
+            ))}
+          </select>
+        </div>
         <button
           onClick={salvar}
           disabled={busy}
@@ -68,6 +94,8 @@ export default function ConfigAluno({ nomeAtual }: { nomeAtual: string }) {
       </div>
       <p className="mt-2 text-xs text-muted">
         Recalcula as semanas do cronograma sugerido conforme o tempo restante até o ENEM.
+        A língua estrangeira escolhida define o material do cronograma e filtra as
+        questões dos simulados — você faz só um idioma na prova.
       </p>
       {msg && <p className="mt-2 text-sm text-primary">{msg}</p>}
     </Card>

@@ -98,7 +98,6 @@ Repare que área e perímetro respondem coisas diferentes — leia com atenção
 - **Unidades:** 1 m = 100 cm, mas 1 m² = 10.000 cm² (a conversão de área vai ao **quadrado**). Errar isso é o deslize nº 1.
 - **Escala de mapa/planta:** "escala 1:100" quer dizer que 1 cm no papel vale 100 cm reais. É uma regra de três.`,
     links: [
-      L("Áreas de figuras planas — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/area-figuras-planas.htm", "Mundo Educação"),
       L("Semelhança de triângulos — Brasil Escola", "https://brasilescola.uol.com.br/matematica/semelhanca-triangulos.htm", "Brasil Escola"),
     ],
   },
@@ -179,7 +178,6 @@ Ou seja: 1 m = 10 dm = 100 cm. E o mais importante para volume:
 - **Quanto transborda / quanto falta:** calcule o volume do recipiente e compare com o que foi despejado.
 - **Unidade errada:** confundir m³ com litros, ou não perceber que volume converte ao **cubo** (1 m³ = 1.000.000 cm³).`,
     links: [
-      L("Volume dos sólidos geométricos — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/volume.htm", "Mundo Educação"),
       L("Geometria espacial — Brasil Escola", "https://brasilescola.uol.com.br/matematica/geometria-espacial.htm", "Brasil Escola"),
     ],
   },
@@ -236,7 +234,6 @@ São três formas de dizer "qual é o valor típico" de um conjunto de números:
 - **Ignorar os pesos** e fazer média simples onde era ponderada (Exemplo 2).
 - **Ler o eixo errado** do gráfico. Antes de calcular, leia o **título** e o que cada eixo mede.`,
     links: [
-      L("Média, moda e mediana — Brasil Escola", "https://brasilescola.uol.com.br/matematica/media-aritmetica-simples-ponderada.htm", "Brasil Escola"),
       L("Estatística e gráficos — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/estatistica.htm", "Mundo Educação"),
     ],
   },
@@ -292,7 +289,6 @@ Inversa (mais operários, menos dias). Aqui NÃO se multiplica em cruz: multipli
 - **Escala, velocidade média (v = distância/tempo) e densidade** são todas razões disfarçadas (Exemplo 3).`,
     links: [
       L("Regra de três simples e composta — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/regra-tres-composta.htm", "Mundo Educação"),
-      L("Razão e proporção — Brasil Escola", "https://brasilescola.uol.com.br/matematica/razao-proporcao.htm", "Brasil Escola"),
     ],
   },
   {
@@ -417,7 +413,6 @@ Eventos que não acontecem juntos → soma: P(5) + P(6) = 1/6 + 1/6 = 2/6 = **1/
 - **Esquecer "sem reposição":** se não devolve, o total cai na retirada seguinte (Exemplo 2).
 - **Confundir "E" com "OU":** "E" multiplica, "OU" soma.`,
     links: [
-      L("Probabilidade — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/probabilidade.htm", "Mundo Educação"),
       L("Probabilidade no ENEM — Brasil Escola", "https://brasilescola.uol.com.br/matematica/probabilidade.htm", "Brasil Escola"),
     ],
   },
@@ -482,8 +477,6 @@ Consumo = distância ÷ combustível = 300 ÷ 25 = **12 km/L** (roda 12 km com c
 - **Esquecer o quadrado/cubo** ao converter área e volume.
 - Contas de luz (kWh), receitas/dosagens e mapas (escala) são aplicações recorrentes.`,
     links: [
-      L("Unidades de medida — Brasil Escola", "https://brasilescola.uol.com.br/matematica/unidades-medida.htm", "Brasil Escola"),
-      L("Conversão de unidades — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/transformacao-unidades.htm", "Mundo Educação"),
     ],
   },
   {
@@ -542,7 +535,6 @@ Modela juros compostos, crescimento de população e meia-vida (decaimento). O q
 - Interpretar gráfico (onde corta os eixos, onde é o máximo) é o pedido mais comum.`,
     links: [
       L("Função do 1º e 2º grau — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/funcao.htm", "Mundo Educação"),
-      L("Função exponencial — Brasil Escola", "https://brasilescola.uol.com.br/matematica/funcao-exponencial.htm", "Brasil Escola"),
     ],
   },
   {
@@ -591,8 +583,6 @@ a₅ = a₁ · q^(n−1) = 3 · 2^(5−1) = 3 · 2⁴ = 3 · 16 = **48**.
 - A questão costuma pedir um **termo distante** (ex.: o 30º) ou a **soma** — use a fórmula em vez de listar tudo à mão (Exemplo 2).
 - Situações típicas: parcelas que crescem de valor fixo (PA), população/dívida que dobra (PG), empilhamentos.`,
     links: [
-      L("Progressão aritmética (PA) — Brasil Escola", "https://brasilescola.uol.com.br/matematica/progressao-aritmetica.htm", "Brasil Escola"),
-      L("Progressão geométrica (PG) — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/progressao-geometrica.htm", "Mundo Educação"),
     ],
   },
   {
@@ -631,7 +621,6 @@ M = ( (2+8)/2 , (4+10)/2 ) = ( 10/2 , 14/2 ) = **(5, 7)**.
 - Saber ler coordenadas e calcular distância/ponto médio entre pontos resolve a maioria.`,
     links: [
       L("Geometria analítica: distância entre pontos — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/distancia-entre-dois-pontos.htm", "Mundo Educação"),
-      L("Equação da reta — Brasil Escola", "https://brasilescola.uol.com.br/matematica/equacao-reta.htm", "Brasil Escola"),
     ],
   },
   {
@@ -683,7 +672,6 @@ Vem da forma ax² + bx + c = 0 (a, b, c são números dados; a ≠ 0). Resolve-s
 - **A etapa que decide** é traduzir o enunciado: quem é a incógnita? Que relações o texto dá?
 - Defina bem "x é o quê" antes de sair calculando — é onde a maioria se perde.`,
     links: [
-      L("Sistemas de equações — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/sistema-equacoes-1-grau.htm", "Mundo Educação"),
       L("Equação do 2º grau — Brasil Escola", "https://brasilescola.uol.com.br/matematica/equacao-segundo-grau.htm", "Brasil Escola"),
     ],
   },
@@ -736,7 +724,6 @@ A ordem NÃO importa (a dupla "João e Ana" é a mesma que "Ana e João"). Combi
 - **A ordem importa?** Senha/pódio/fila → sim (multiplica direto). Grupo/comissão → não (divida para não contar repetido, como no Exemplo 3).
 - Na dúvida, o **princípio multiplicativo** (multiplicar as opções de cada etapa) resolve a maioria.`,
     links: [
-      L("Princípio fundamental da contagem — Brasil Escola", "https://brasilescola.uol.com.br/matematica/principio-fundamental-contagem.htm", "Brasil Escola"),
       L("Arranjo, permutação e combinação — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/analise-combinatoria.htm", "Mundo Educação"),
     ],
   },
@@ -776,8 +763,6 @@ Um "se A, então B" só é **falso** num único caso: quando A acontece mas B n�
 - Geralmente disfarçado: uma tabela de condições, um quebra-cabeça de pistas, um padrão a completar.
 - Ganha quem **organiza os dados** com método, em vez de chutar.`,
     links: [
-      L("Raciocínio lógico — Brasil Escola", "https://brasilescola.uol.com.br/matematica/raciocinio-logico.htm", "Brasil Escola"),
-      L("Lógica proposicional — Mundo Educação", "https://mundoeducacao.uol.com.br/matematica/logica.htm", "Mundo Educação"),
     ],
   },
 ];

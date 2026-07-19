@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { parseJson, stringifyJson } from "@/lib/json";
 import { gradeAttempt } from "@/lib/grade";
+import { ehDoIdioma, getIdiomaAluno } from "@/lib/idioma";
 
 const schema = z.object({
   examId: z.string().min(1),
@@ -34,12 +35,21 @@ export async function POST(req: Request) {
   }
 
   const questionIds = parseJson<string[]>(exam.questionIds, []);
-  const questions = await prisma.question.findMany({
-    where: { id: { in: questionIds } },
-    select: { id: true, discipline: true, correta: true },
-  });
+  const [questions, idioma] = await Promise.all([
+    prisma.question.findMany({
+      where: { id: { in: questionIds } },
+      select: { id: true, discipline: true, correta: true, language: true },
+    }),
+    getIdiomaAluno(),
+  ]);
 
-  const result = gradeAttempt(questions, respostas);
+  // Corrige só o que foi de fato apresentado ao aluno: a prova esconde a língua
+  // estrangeira do outro idioma (app/provas/[id]/page.tsx). Sem este filtro,
+  // essas questões entrariam no total como erro por falta de resposta.
+  const result = gradeAttempt(
+    questions.filter((q) => ehDoIdioma(q, idioma)),
+    respostas,
+  );
 
   const attempt = await prisma.attempt.create({
     data: {

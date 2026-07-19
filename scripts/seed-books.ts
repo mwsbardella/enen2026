@@ -15,6 +15,7 @@ import "dotenv/config";
 import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
 import { textoIntegralDe } from "../lib/texto-integral";
+import { comVideos } from "../lib/links";
 import { books } from "../prisma/content/books";
 
 async function main() {
@@ -30,7 +31,7 @@ async function main() {
       escola: b.escola,
       temasRedacao: stringifyJson(b.temasRedacao),
       resumoMarkdown: b.resumoMarkdown,
-      links: stringifyJson(b.links),
+      links: stringifyJson(comVideos(b.slug, b.links)),
       textoCompleto,
       ordem: b.ordem,
     };

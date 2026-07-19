@@ -2,15 +2,18 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { regenerarCronograma } from "@/lib/cronograma-generator";
+import { IDIOMAS } from "@/lib/idioma";
 
 const schema = z.object({
   // Nome opcional: se vier, atualiza o aluno. Vazio/ausente = só refaz o cronograma.
   nome: z.string().trim().min(1).max(80).optional(),
+  // Língua estrangeira que o aluno vai fazer na prova.
+  idioma: z.enum(IDIOMAS).optional(),
 });
 
-// POST /api/aluno — atualiza o nome do aluno (se informado) e refaz o cronograma
-// sugerido com base no tempo que falta para o ENEM. Semanas criadas pelo usuário
-// são preservadas.
+// POST /api/aluno — atualiza nome e idioma do aluno (se informados) e refaz o
+// cronograma sugerido com base no tempo que falta para o ENEM. Semanas criadas
+// pelo usuário são preservadas.
 export async function POST(req: Request) {
   let body: unknown;
   try {
@@ -27,17 +30,24 @@ export async function POST(req: Request) {
     );
   }
 
-  const { nome } = parsed.data;
+  const { nome, idioma } = parsed.data;
 
-  // Single-user: garante que exista um usuário e atualiza o nome, se informado.
+  // Single-user: garante que exista um usuário e atualiza o que veio informado.
   let user = await prisma.user.findFirst();
   if (!user) {
-    user = await prisma.user.create({ data: { nome: nome ?? "estudante" } });
-  } else if (nome) {
-    user = await prisma.user.update({ where: { id: user.id }, data: { nome } });
+    user = await prisma.user.create({
+      data: { nome: nome ?? "estudante", ...(idioma ? { idioma } : {}) },
+    });
+  } else if (nome || idioma) {
+    user = await prisma.user.update({
+      where: { id: user.id },
+      data: { ...(nome ? { nome } : {}), ...(idioma ? { idioma } : {}) },
+    });
   }
 
+  // Depois de gravar o idioma: o gerador lê User.idioma para decidir qual
+  // tarefa de língua estrangeira entra no cronograma.
   const semanas = await regenerarCronograma();
 
-  return NextResponse.json({ ok: true, nome: user.nome, semanas });
+  return NextResponse.json({ ok: true, nome: user.nome, idioma: user.idioma, semanas });
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { ENEM_DIA_1, ENEM_DIA_2, semanaAtualPorData, formatarData } from "@/lib/dates";
 import { enrichTasks } from "@/lib/tasks";
+import { parseIdioma } from "@/lib/idioma";
 import Countdown from "@/components/Countdown";
 import TaskList from "@/components/TaskList";
 import ConfigAluno from "@/components/ConfigAluno";
@@ -71,7 +72,7 @@ export default async function Dashboard() {
         subtitle="Seu ambiente de estudo ativo para o ENEM 2026."
       />
 
-      <ConfigAluno nomeAtual={user?.nome ?? ""} />
+      <ConfigAluno nomeAtual={user?.nome ?? ""} idiomaAtual={parseIdioma(user?.idioma)} />
 
       <Card className="bg-gradient-to-br from-surface to-surface-2">
         <p className="text-sm text-muted">Contagem regressiva — 1º dia de prova</p>

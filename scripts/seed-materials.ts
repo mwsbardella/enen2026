@@ -10,6 +10,7 @@
 import "dotenv/config";
 import { prisma } from "../lib/prisma";
 import { stringifyJson } from "../lib/json";
+import { comVideos } from "../lib/links";
 import { humanasMateriais, type MaterialSeed } from "../prisma/content/materials/humanas";
 import { matematicaMateriais } from "../prisma/content/materials/matematica";
 import { linguagensMateriais } from "../prisma/content/materials/linguagens";
@@ -40,7 +41,7 @@ async function main() {
         topicId: topic.id,
         titulo: m.titulo,
         resumoMarkdown: m.resumoMarkdown,
-        links: stringifyJson(m.links),
+        links: stringifyJson(comVideos(m.topicSlug, m.links)),
       },
     });
     const qCount = await prisma.question.count({ where: { topicId: topic.id } });

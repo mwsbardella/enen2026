@@ -100,8 +100,6 @@ Se um trabalhador produz, em um dia, mercadorias que valem R$ 400 e recebe R$ 10
 - "Mais-valia" nunca é "aumento de preço" nem "inflação".`,
     links: [
       link("Revolução Industrial — Brasil Escola", "https://brasilescola.uol.com.br/historiag/revolucao-industrial.htm", "Brasil Escola"),
-      link("Taylorismo, Fordismo e Toyotismo — Mundo Educação", "https://mundoeducacao.uol.com.br/geografia/fordismo-taylorismo.htm", "Mundo Educação"),
-      link("Mais-valia e trabalho em Marx — Brasil Escola", "https://brasilescola.uol.com.br/sociologia/mais-valia.htm", "Brasil Escola"),
     ],
   },
   {
@@ -172,9 +170,7 @@ Os contratualistas partem todos da mesma pergunta: *como seria a vida sem govern
 3. **Pegadinha nº 1:** alternativas historicamente verdadeiras, mas que **não estão no texto**. Verdadeiro ≠ correto.
 4. **Pegadinha nº 2:** trocar o filósofo (dar a tese de Hobbes numa questão sobre Locke). Por isso a tabela do contratualismo vale ouro.`,
     links: [
-      link("Contratualismo — Brasil Escola", "https://brasilescola.uol.com.br/filosofia/contratualismo.htm", "Brasil Escola"),
       link("Ética em Aristóteles e Kant — Mundo Educação", "https://mundoeducacao.uol.com.br/filosofia/etica.htm", "Mundo Educação"),
-      link("Mito da caverna — Brasil Escola", "https://brasilescola.uol.com.br/filosofia/mito-caverna.htm", "Brasil Escola"),
     ],
   },
   {
@@ -317,8 +313,6 @@ O ENEM lê a desigualdade brasileira sempre por **classe, raça e gênero** — 
 - Alternativas que naturalizam desigualdades ("é da natureza humana"), tratam culturas como "atrasadas" ou veem movimentos sociais como "desordem" e "ameaça à ordem" costumam estar **erradas**.
 - Outra armadilha: alternativas que explicam um problema social por **culpa individual** ("falta de esforço"). A Sociologia do ENEM explica por **estrutura**.`,
     links: [
-      link("Movimentos sociais — Brasil Escola", "https://brasilescola.uol.com.br/sociologia/movimentos-sociais.htm", "Brasil Escola"),
-      link("Indústria cultural — Mundo Educação", "https://mundoeducacao.uol.com.br/sociologia/industria-cultural.htm", "Mundo Educação"),
       link("Etnocentrismo e relativismo cultural — Brasil Escola", "https://brasilescola.uol.com.br/sociologia/etnocentrismo.htm", "Brasil Escola"),
     ],
   },
@@ -389,7 +383,6 @@ O desafio central é a **efetivação**: estar no papel não significa existir n
 - **Pegadinha:** confundir plebiscito com referendo (o plebiscito vem **antes**, o referendo **depois**) e confundir direito social com político.
 - Excelente **repertório de redação**: Constituição de 1988, DUDH de 1948, cidadania regulada e a distinção entre igualdade formal e material.`,
     links: [
-      link("Cidadania e os direitos de Marshall — Mundo Educação", "https://mundoeducacao.uol.com.br/sociologia/cidadania.htm", "Mundo Educação"),
       link("Constituição de 1988 — Brasil Escola", "https://brasilescola.uol.com.br/historiab/constituicao-1988.htm", "Brasil Escola"),
       link("Declaração Universal dos Direitos Humanos — texto oficial", "https://www.unicef.org/brazil/declaracao-universal-dos-direitos-humanos", "UNICEF Brasil"),
     ],
@@ -530,9 +523,7 @@ Pacote técnico difundido a partir dos anos 1960: sementes selecionadas, **agrot
 - A resposta correta costuma evidenciar **tensões**: aumento de produtividade *versus* concentração fundiária, desemprego rural ou degradação ambiental.
 - **Pegadinha:** confundir *produtividade* (quanto se colhe por hectare) com *distribuição* (quem é dono). Crescer a produção não corrige a concentração — e o ENEM gosta exatamente desse contraste.`,
     links: [
-      link("Estrutura fundiária no Brasil — Mundo Educação", "https://mundoeducacao.uol.com.br/geografia/estrutura-fundiaria.htm", "Mundo Educação"),
       link("Revolução Verde — Brasil Escola", "https://brasilescola.uol.com.br/geografia/revolucao-verde.htm", "Brasil Escola"),
-      link("Lei de Terras de 1850 — Mundo Educação", "https://mundoeducacao.uol.com.br/historiadobrasil/lei-terras.htm", "Mundo Educação"),
     ],
   },
   {
@@ -602,7 +593,6 @@ A abolição de 1888 foi **tardia e sem qualquer política de inclusão**: os li
 - **Pegadinha:** alternativas que descrevem a escravidão brasileira como "branda", "paternal" ou "harmoniosa" (a velha tese da democracia racial) estão sempre erradas.`,
     links: [
       link("Escravidão no Brasil — Brasil Escola", "https://brasilescola.uol.com.br/historiab/escravidao-no-brasil.htm", "Brasil Escola"),
-      link("Quilombos e resistência — Mundo Educação", "https://mundoeducacao.uol.com.br/historiadobrasil/quilombo.htm", "Mundo Educação"),
       link("Revolta dos Malês — Brasil Escola", "https://brasilescola.uol.com.br/historiab/revolta-males.htm", "Brasil Escola"),
     ],
   },
@@ -672,8 +662,6 @@ Temas atuais que aparecem: disputa tecnológica EUA–China, guerra na Ucrânia 
 - **Pegadinha:** alternativas que dizem que a globalização "eliminou as fronteiras" ou "homogeneizou o mundo". Ela na verdade **seleciona**: integra alguns lugares e pessoas e exclui outros, às vezes dentro da mesma cidade.`,
     links: [
       link("Globalização — Mundo Educação", "https://mundoeducacao.uol.com.br/geografia/globalizacao.htm", "Mundo Educação"),
-      link("Blocos econômicos — Brasil Escola", "https://brasilescola.uol.com.br/geografia/blocos-economicos.htm", "Brasil Escola"),
-      link("Divisão internacional do trabalho — Mundo Educação", "https://mundoeducacao.uol.com.br/geografia/divisao-internacional-trabalho.htm", "Mundo Educação"),
     ],
   },
   {
@@ -747,9 +735,7 @@ O fio comum: **exclusão social e autoritarismo**. Populações pobres reagindo 
 - A resposta certa destaca a distância entre a **cidadania formal** (existe a lei) e a **real** (não funciona para a maioria).
 - **Pegadinha:** confundir Constituição **outorgada** (1824, imposta) com **promulgada** (1891, 1988). E tratar Canudos como movimento "monarquista" — era uma comunidade de sertanejos pobres, e o rótulo foi construído para justificar o massacre.`,
     links: [
-      link("República Velha — Brasil Escola", "https://brasilescola.uol.com.br/historiab/republica-velha.htm", "Brasil Escola"),
       link("Coronelismo — Mundo Educação", "https://mundoeducacao.uol.com.br/historiadobrasil/coronelismo.htm", "Mundo Educação"),
-      link("Guerra de Canudos — Brasil Escola", "https://brasilescola.uol.com.br/historiab/guerra-canudos.htm", "Brasil Escola"),
     ],
   },
   {
@@ -835,7 +821,6 @@ Após 1945, colônias africanas e asiáticas conquistaram independência, às ve
     links: [
       link("Guerra Fria — Brasil Escola", "https://brasilescola.uol.com.br/historiag/guerra-fria.htm", "Brasil Escola"),
       link("Totalitarismo: nazismo e fascismo — Mundo Educação", "https://mundoeducacao.uol.com.br/historiageral/nazismo.htm", "Mundo Educação"),
-      link("Descolonização da África — Brasil Escola", "https://brasilescola.uol.com.br/historiag/descolonizacao-africa.htm", "Brasil Escola"),
     ],
   },
   {
@@ -905,8 +890,6 @@ Por isso a fórmula que aparece nas alternativas corretas: **conquista de direit
 - Não confunda: **Estado Novo** (1937–45, ditadura) × segundo governo (1951–54, **eleito pelo voto**).`,
     links: [
       link("Era Vargas — Brasil Escola", "https://brasilescola.uol.com.br/historiab/era-vargas.htm", "Brasil Escola"),
-      link("Populismo no Brasil — Mundo Educação", "https://mundoeducacao.uol.com.br/historiadobrasil/populismo.htm", "Mundo Educação"),
-      link("Estado Novo (1937–1945) — Brasil Escola", "https://brasilescola.uol.com.br/historiab/estado-novo.htm", "Brasil Escola"),
     ],
   },
   {
@@ -983,7 +966,6 @@ As **Diretas Já** (1984) mobilizaram multidões, mas a emenda que restabeleceri
     links: [
       link("Ditadura militar no Brasil — Brasil Escola", "https://brasilescola.uol.com.br/historiab/ditadura-militar.htm", "Brasil Escola"),
       link("Diretas Já — Mundo Educação", "https://mundoeducacao.uol.com.br/historiadobrasil/diretas-ja.htm", "Mundo Educação"),
-      link("AI-5 — Brasil Escola", "https://brasilescola.uol.com.br/historiab/ai-5.htm", "Brasil Escola"),
     ],
   },
 ];

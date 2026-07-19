@@ -20,6 +20,9 @@ datasource db {
 model User {
   id       String   @id @default(cuid())
   nome     String
+  /// "ingles" | "espanhol" — no ENEM se faz um idioma OU o outro. Filtra o
+  /// cronograma (tarefa de língua estrangeira) e os simulados.
+  idioma   String   @default("ingles")
   criadoEm DateTime @default(now())
 }
 

@@ -21,7 +21,6 @@ Romance do **Modernismo** brasileiro (2ª fase, o "romance de 30", regionalista)
 **Por que é prioridade**: é a obra mais cobrada para discutir **desigualdade, seca, migração e exclusão social** — temas centrais de Humanas e de redação.`,
     links: [
       { titulo: "Vidas Secas — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/vidas-secas.htm", fonte: "Brasil Escola" },
-      { titulo: "Vidas Secas — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/vidas-secas.htm", fonte: "Mundo Educação" },
     ],
     ordem: 1,
   },
@@ -44,7 +43,6 @@ Principal romance do **Naturalismo** brasileiro. Aluísio Azevedo retrata a vida
 
 **Por que é prioridade**: rende discussões sobre **moradia, desigualdade urbana e exploração do trabalho**, além de exemplificar perfeitamente as teorias naturalistas cobradas em literatura.`,
     links: [
-      { titulo: "O Cortiço — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/o-cortico.htm", fonte: "Brasil Escola" },
       { titulo: "Naturalismo — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/naturalismo.htm", fonte: "Mundo Educação" },
     ],
     ordem: 2,
@@ -115,7 +113,6 @@ Diário real de **Carolina Maria de Jesus**, mulher **negra, catadora de papel e
 
 **Por que é prioridade**: repertório poderosíssimo para **fome, desigualdade, favela, racismo e lugar de fala da mulher negra** — temas recorrentes na redação e em Humanas.`,
     links: [
-      { titulo: "Quarto de Despejo — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/quarto-despejo.htm", fonte: "Brasil Escola" },
       { titulo: "Carolina Maria de Jesus — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/carolina-maria-de-jesus.htm", fonte: "Mundo Educação" },
     ],
     ordem: 5,
@@ -139,7 +136,6 @@ Romance do **Modernismo** (romance de 30) de Jorge Amado. Acompanha um grupo de 
 
 **Por que é prioridade**: repertório direto para **infância, abandono, direitos da criança (ECA), desigualdade e o ciclo da exclusão**.`,
     links: [
-      { titulo: "Capitães da Areia — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/capitaes-areia.htm", fonte: "Brasil Escola" },
       { titulo: "Jorge Amado — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/jorge-amado.htm", fonte: "Mundo Educação" },
     ],
     ordem: 6,
@@ -163,7 +159,6 @@ Romance **contemporâneo** premiado (Prêmio Jabuti, LeYa, Oceanos). Narra a vid
 
 **Por que é prioridade**: obra atualíssima e muito comentada; repertório forte para **questão agrária, trabalho escravo contemporâneo, racismo e ancestralidade**.`,
     links: [
-      { titulo: "Torto Arado — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/torto-arado.htm", fonte: "Brasil Escola" },
       { titulo: "Literatura contemporânea — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
     ],
     ordem: 7,
@@ -185,7 +180,6 @@ Romance de estreia de **Rachel de Queiroz**, ambientado na **grande seca de 1915
 
 **Por que estudar**: bom par com *Vidas Secas* para o tema **seca, migração e desigualdade regional**, somando a perspectiva feminina.`,
     links: [
-      { titulo: "O Quinze — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/o-quinze.htm", fonte: "Brasil Escola" },
       { titulo: "Rachel de Queiroz — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
     ],
     ordem: 9,
@@ -231,7 +225,6 @@ Romance **indianista** do **Romantismo**, de José de Alencar. Narra o amor entr
 
 **Por que estudar**: rende discussões sobre **migração, invisibilidade social e condição feminina**, com a prosa singular de Clarice.`,
     links: [
-      { titulo: "A Hora da Estrela — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/a-hora-estrela.htm", fonte: "Brasil Escola" },
       { titulo: "Clarice Lispector — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/clarice-lispector.htm", fonte: "Mundo Educação" },
     ],
     ordem: 11,
@@ -254,7 +247,6 @@ Peça teatral de **Ariano Suassuna**, inspirada nos **autos medievais** e na **l
 
 **Por que estudar**: valoriza a **cultura popular nordestina** e discute **religiosidade, justiça e desigualdade** de forma acessível.`,
     links: [
-      { titulo: "Auto da Compadecida — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/auto-compadecida.htm", fonte: "Brasil Escola" },
       { titulo: "Ariano Suassuna — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura", fonte: "Mundo Educação" },
     ],
     ordem: 12,
@@ -277,8 +269,6 @@ Livro de poemas de **Carlos Drummond de Andrade**, escrito no fim dos anos 1930,
 
 **Por que estudar**: rende repertório sobre **engajamento, solidariedade, guerra e o papel do indivíduo na sociedade**, com a poesia mais social de Drummond.`,
     links: [
-      { titulo: "Sentimento do Mundo — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/carlos-drummond-andrade.htm", fonte: "Brasil Escola" },
-      { titulo: "Drummond — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/carlos-drummond-andrade.htm", fonte: "Mundo Educação" },
     ],
     ordem: 13,
   },
@@ -301,7 +291,6 @@ Livro de poemas de **Carlos Drummond de Andrade**, escrito no fim dos anos 1930,
 
 **Por que é prioridade**: um dos textos **mais cobrados da história do ENEM**; par obrigatório de *Vidas Secas* e *O Quinze* no eixo do retirante.`,
     links: [
-      { titulo: "Morte e Vida Severina — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/morte-vida-severina.htm", fonte: "Brasil Escola" },
       { titulo: "João Cabral de Melo Neto — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/joao-cabral-melo-neto.htm", fonte: "Mundo Educação" },
     ],
     ordem: 8,
@@ -326,7 +315,6 @@ Livro de poemas de **Carlos Drummond de Andrade**, escrito no fim dos anos 1930,
 **Por que estudar**: a Semana de 22 e o projeto modernista de identidade nacional caem muito; o lema "Ai! que preguiça!" e a antropofagia cultural são repertório clássico.`,
     links: [
       { titulo: "Macunaíma — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/macunaima.htm", fonte: "Brasil Escola" },
-      { titulo: "Modernismo 1ª fase — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/primeira-fase-modernista.htm", fonte: "Mundo Educação" },
     ],
     ordem: 14,
   },
@@ -348,8 +336,6 @@ Poema-símbolo do **condoreirismo** (3ª geração romântica), de Castro Alves,
 
 **Por que estudar**: recorrente nas provas (gerações românticas, recursos retóricos) e ponte natural para **racismo estrutural e trabalho escravo contemporâneo**; retomado por slams e rappers (intertextualidade).`,
     links: [
-      { titulo: "Castro Alves — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/castro-alves.htm", fonte: "Brasil Escola" },
-      { titulo: "Terceira geração romântica — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/terceira-geracao-romantica.htm", fonte: "Mundo Educação" },
     ],
     ordem: 15,
   },
@@ -395,8 +381,6 @@ Romance-monumento de Guimarães Rosa: **Riobaldo**, velho ex-jagunço, monologa 
 
 **Por que prioridade baixa**: o livro inteiro é longo e difícil — no ENEM caem **trechos**. Estratégia: conhecer enredo, narrador e frases-chave por esta análise, lendo excertos.`,
     links: [
-      { titulo: "Grande Sertão: Veredas — análise (Brasil Escola)", url: "https://brasilescola.uol.com.br/literatura/grande-sertao-veredas.htm", fonte: "Brasil Escola" },
-      { titulo: "Guimarães Rosa — Mundo Educação", url: "https://mundoeducacao.uol.com.br/literatura/guimaraes-rosa.htm", fonte: "Mundo Educação" },
     ],
     ordem: 17,
   },

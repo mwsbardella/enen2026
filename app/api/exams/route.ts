@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { stringifyJson } from "@/lib/json";
 import { SUBJECTS, DISCIPLINE_TO_SUBJECT, nomeDaArea } from "@/lib/subjects";
+import { getIdiomaAluno, whereIdioma } from "@/lib/idioma";
 
 const areaSlugs = SUBJECTS.map((s) => s.slug) as [string, ...string[]];
 const schema = z.object({
@@ -43,9 +44,15 @@ export async function POST(req: Request) {
   }
   const { area, year, quantidade } = parsed.data;
 
-  const where: { discipline?: { in: string[] }; year?: number } = {};
+  const where: {
+    discipline?: { in: string[] };
+    year?: number;
+    OR?: { language: string | null }[];
+  } = {};
   if (area) where.discipline = { in: disciplinesForArea(area) };
   if (year) where.year = year;
+  // Língua estrangeira: só o idioma do aluno (mais as questões comuns).
+  Object.assign(where, whereIdioma(await getIdiomaAluno()));
 
   const candidatas = await prisma.question.findMany({
     where,

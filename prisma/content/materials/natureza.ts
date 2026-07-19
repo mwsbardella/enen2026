@@ -70,7 +70,6 @@ F = m · a = 4 · 3 = **12 N** (newtons).
 - Muitas questões saem por **conservação de energia** (Exemplo 3) ou por **leitura de gráfico** (posição × tempo, velocidade × tempo).
 - Cuidado com **unidades** (m/s × km/h) e em separar o que é **dado** do que é **pedido**.`,
     links: [
-      L("Leis de Newton — Brasil Escola", "https://brasilescola.uol.com.br/fisica/as-leis-newton.htm", "Brasil Escola"),
       L("Energia mecânica — Mundo Educação", "https://mundoeducacao.uol.com.br/fisica/energia-mecanica.htm", "Mundo Educação"),
     ],
   },
@@ -126,8 +125,6 @@ Numa reação que vai e volta ao mesmo tempo, se você "perturba" o sistema (mud
 ### Como cai no ENEM
 - Parte de um contexto (reação industrial, alimento, ambiente) e pede um cálculo de **concentração/pH** ou o porquê de a reação **acelerar/deslocar**. Domine **mol**, **concentração** e **diluição** — são a base de tudo.`,
     links: [
-      L("Concentração de soluções — Mundo Educação", "https://mundoeducacao.uol.com.br/quimica/concentracao-molar.htm", "Mundo Educação"),
-      L("pH e pOH — Brasil Escola", "https://brasilescola.uol.com.br/quimica/ph-poh.htm", "Brasil Escola"),
     ],
   },
   {
@@ -178,8 +175,6 @@ Enquanto uma substância derrete ou ferve, a temperatura fica **parada** — tod
 - Situações de aquecimento de água, isolamento térmico, motores e eficiência energética.
 - Costuma cobrar **trocas de calor** (Q = m·c·ΔT, Exemplo 2) ou identificar o **tipo de propagação**. Liga-se a sustentabilidade e consumo de energia.`,
     links: [
-      L("Calorimetria — Brasil Escola", "https://brasilescola.uol.com.br/fisica/calorimetria.htm", "Brasil Escola"),
-      L("Propagação de calor — Mundo Educação", "https://mundoeducacao.uol.com.br/fisica/propagacao-calor.htm", "Mundo Educação"),
     ],
   },
   {
@@ -315,8 +310,6 @@ Resultado: 1 AA, 2 Aa, 1 aa → proporção **3 dominantes : 1 recessivo**. Como
 - Um **heredograma** (árvore genealógica) ou um cruzamento pedindo a **probabilidade** de um filho ter certa característica (Exemplo acima).
 - Um texto sobre **evolução ou biotecnologia** (transgênicos, clonagem, teste de DNA) pedindo o conceito correto. Cuidado para não confundir seleção natural com "adaptação por esforço" (a ideia errada, atribuída a Lamarck).`,
     links: [
-      L("Leis de Mendel — Brasil Escola", "https://brasilescola.uol.com.br/biologia/leis-mendel.htm", "Brasil Escola"),
-      L("Seleção natural e evolução — Mundo Educação", "https://mundoeducacao.uol.com.br/biologia/teoria-evolucao.htm", "Mundo Educação"),
     ],
   },
   {
@@ -366,7 +359,6 @@ f = v / λ = (3·10⁸) ÷ 3 = 10⁸ Hz = **100 MHz** (megahertz) — a faixa do
 ### Como cai no ENEM
 - Uma situação com luz, som ou comunicação (rádio, micro-ondas, fibra óptica) pedindo a relação entre **frequência, comprimento de onda e velocidade** — a fórmula **v = λ·f** resolve muita questão (Exemplos 1 e 2) — ou identificar o fenômeno óptico (reflexão × refração).`,
     links: [
-      L("Ondas: características — Mundo Educação", "https://mundoeducacao.uol.com.br/fisica/ondas.htm", "Mundo Educação"),
       L("Reflexão e refração da luz — Brasil Escola", "https://brasilescola.uol.com.br/fisica/optica.htm", "Brasil Escola"),
     ],
   },
@@ -404,8 +396,6 @@ Eles **trabalham integrados**: o respiratório capta o O₂, o circulatório o d
 - Um texto sobre uma **doença, vacina ou processo do corpo** pedindo o mecanismo correto: como o sistema imune age, como a doença se transmite, como se previne.
 - Conecta-se a **cidadania e políticas de saúde** (saneamento, campanhas de vacinação, SUS).`,
     links: [
-      L("Sistema imunológico e vacinas — Brasil Escola", "https://brasilescola.uol.com.br/biologia/sistema-imunologico.htm", "Brasil Escola"),
-      L("Fisiologia humana — Mundo Educação", "https://mundoeducacao.uol.com.br/biologia/fisiologia-humana.htm", "Mundo Educação"),
     ],
   },
   {
@@ -440,8 +430,6 @@ Eles **trabalham integrados**: o respiratório capta o O₂, o circulatório o d
 - Um problema ambiental real pedindo a **explicação química** (por que tal gás causa efeito estufa, como tratar um efluente) ou a alternativa mais **sustentável**.
 - Liga-se diretamente à Geografia ambiental e é ótima fonte de repertório para a redação.`,
     links: [
-      L("Efeito estufa e poluição — Mundo Educação", "https://mundoeducacao.uol.com.br/quimica/efeito-estufa.htm", "Mundo Educação"),
-      L("Combustíveis e meio ambiente — Brasil Escola", "https://brasilescola.uol.com.br/quimica/combustiveis.htm", "Brasil Escola"),
     ],
   },
   {
@@ -483,7 +471,6 @@ Repare que uma é praticamente o inverso da outra, e juntas mantêm o ciclo do c
 ### Como cai no ENEM
 - Um processo celular (fotossíntese, respiração, ação de uma enzima) pedindo a **organela** ou a **etapa** responsável, ou a **relação** entre fotossíntese e respiração (uma produz o que a outra consome).`,
     links: [
-      L("Organelas celulares — Brasil Escola", "https://brasilescola.uol.com.br/biologia/organelas-citoplasmaticas.htm", "Brasil Escola"),
       L("Fotossíntese e respiração celular — Mundo Educação", "https://mundoeducacao.uol.com.br/biologia/fotossintese.htm", "Mundo Educação"),
     ],
   },

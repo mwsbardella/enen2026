@@ -37,7 +37,6 @@ A redação do ENEM é um texto **dissertativo-argumentativo em prosa**: você p
 **Dica de prova**: planeje **antes de escrever** (rascunho do projeto de texto): defina tese, os 2 argumentos com repertórios e a proposta de intervenção. Isso garante **progressão** e evita a temida fuga ao tema. Linguagem sempre **formal** e impessoal (3ª pessoa).`,
       links: [
         { titulo: "Redação dissertativo-argumentativa — Brasil Escola", url: "https://brasilescola.uol.com.br/redacao", fonte: "Brasil Escola" },
-        { titulo: "Estrutura da redação do ENEM — Mundo Educação", url: "https://mundoeducacao.uol.com.br/enem/redacao-no-enem.htm", fonte: "Mundo Educação" },
         { titulo: "Estrutura da redação nota 1000 (vídeo)", url: "https://www.youtube.com/results?search_query=estrutura+reda%C3%A7%C3%A3o+enem+nota+1000", fonte: "YouTube (educacional)" },
       ],
     },
@@ -73,7 +72,6 @@ Avalia uma proposta **completa, detalhada e exequível** para o problema, com os
 
 **Dica de prova**: a nota 1000 exige excelência **nas cinco** ao mesmo tempo. Falhas comuns que derrubam pontos: tangenciar o tema (C2), argumento raso ou senso comum (C3), poucos conectivos (C4) e proposta vaga ou incompleta (C5).`,
       links: [
-        { titulo: "As 5 competências da redação — Brasil Escola", url: "https://brasilescola.uol.com.br/redacao/competencias-redacao-enem.htm", fonte: "Brasil Escola" },
         { titulo: "Cartilha de redação do ENEM (INEP)", url: "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem", fonte: "INEP (oficial)" },
         { titulo: "5 competências explicadas (vídeo)", url: "https://www.youtube.com/results?search_query=5+compet%C3%AAncias+reda%C3%A7%C3%A3o+enem", fonte: "YouTube (educacional)" },
       ],
@@ -106,8 +104,6 @@ A **proposta de intervenção** é o desfecho da redação: uma solução **conc
 
 **Dica de prova**: faça uma **checklist mental** dos 5 elementos antes de finalizar. Uma proposta detalhada, exequível e ligada ao problema é o caminho do 200 na C5.`,
       links: [
-        { titulo: "Proposta de intervenção — Brasil Escola", url: "https://brasilescola.uol.com.br/redacao/a-proposta-intervencao-na-redacao-enem.htm", fonte: "Brasil Escola" },
-        { titulo: "Proposta de intervenção — Mundo Educação", url: "https://mundoeducacao.uol.com.br/enem/proposta-intervencao-na-redacao-enem.htm", fonte: "Mundo Educação" },
         { titulo: "Proposta de intervenção (vídeo)", url: "https://www.youtube.com/results?search_query=proposta+de+interven%C3%A7%C3%A3o+enem", fonte: "YouTube (educacional)" },
       ],
     },
@@ -187,7 +183,6 @@ Propostas de intervenção que **firam os direitos humanos** (defesa de tortura,
 
 **Dica de prova**: na dúvida sobre o tema, releia a frase temática **palavra por palavra** e mantenha cada parágrafo ancorado nela.`,
       links: [
-        { titulo: "O que zera a redação — Brasil Escola", url: "https://brasilescola.uol.com.br/redacao/o-que-zera-redacao-enem.htm", fonte: "Brasil Escola" },
         { titulo: "Cartilha do participante (INEP)", url: "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem", fonte: "INEP (oficial)" },
         { titulo: "Motivos de nota zero (vídeo)", url: "https://www.youtube.com/results?search_query=o+que+zera+a+reda%C3%A7%C3%A3o+enem", fonte: "YouTube (educacional)" },
       ],

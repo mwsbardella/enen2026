@@ -46,7 +46,6 @@ São **5 questões** (1 a 5) para quem escolhe Espanhol. Caem como interpretaç�
 
 **Como a banca cobra:** um texto curto e uma pergunta de interpretação (qual a tese, a crítica, a função). Leia o enunciado primeiro e volte ao texto buscando a passagem que responde.`,
     links: [
-      L("Falsos cognatos em espanhol — Brasil Escola", "https://brasilescola.uol.com.br/espanhol/falsos-cognatos-heterosemanticos.htm", "Brasil Escola"),
       L("Interpretação em espanhol no ENEM — Mundo Educação", "https://mundoeducacao.uol.com.br/espanhol", "Mundo Educação"),
     ],
   },
@@ -111,8 +110,6 @@ A habilidade mais **rentável** da prova inteira — atravessa todas as áreas, 
 
 **Armadilhas:** extrapolação (afirma mais do que o texto autoriza), redução, contradição e troca sutil de palavras. Desconfie de absolutos ("sempre", "nunca", "todos"). **A correta tem base no texto.**`,
     links: [
-      L("Interpretação de texto — Brasil Escola", "https://brasilescola.uol.com.br/redacao/interpretacao-texto.htm", "Brasil Escola"),
-      L("Compreensão e interpretação — Mundo Educação", "https://mundoeducacao.uol.com.br/redacao/interpretacao-texto.htm", "Mundo Educação"),
     ],
   },
   {
@@ -152,7 +149,6 @@ Linguagens não verbais: artes visuais, música, teatro, dança e patrimônio.
 
 **Como a banca cobra:** uma imagem/obra e a pergunta sobre seu **sentido ou intenção**. A resposta certa relaciona forma e contexto, e valoriza a arte como **expressão cultural e crítica social** — não como mera decoração ou técnica.`,
     links: [
-      L("Patrimônio cultural — Brasil Escola", "https://brasilescola.uol.com.br/cultura/patrimonio-cultural.htm", "Brasil Escola"),
       L("Linguagens artísticas — Mundo Educação", "https://mundoeducacao.uol.com.br/artes", "Mundo Educação"),
     ],
   },
@@ -172,7 +168,6 @@ Tema com forte viés **sociolinguístico**: valoriza as variedades e combate o *
 **Como a banca cobra:** um texto com fala popular, regional ou de personagens (cordel, funk, Chico Bento). A resposta correta quase sempre **valoriza a variedade e a adequação ao contexto** e rejeita alternativas que tratam a fala como "erro" ou "ignorância". Marcos Bagno é referência na crítica ao preconceito linguístico.`,
     links: [
       L("Variação linguística — Mundo Educação", "https://mundoeducacao.uol.com.br/gramatica/variacoes-linguisticas.htm", "Mundo Educação"),
-      L("Preconceito linguístico — Brasil Escola", "https://brasilescola.uol.com.br/gramatica/preconceito-linguistico.htm", "Brasil Escola"),
     ],
   },
   {
@@ -212,8 +207,6 @@ Recursos expressivos que dão **força e novos sentidos** ao texto — caem em p
 
 **Como a banca cobra:** identificar a figura e, principalmente, o **efeito de sentido** que ela produz. Cuidado para não confundir **metáfora** (sem conectivo) com **comparação** (com "como"), e **metonímia** com metáfora.`,
     links: [
-      L("Figuras de linguagem — Brasil Escola", "https://brasilescola.uol.com.br/redacao/figuras-linguagem.htm", "Brasil Escola"),
-      L("Figuras de linguagem — Mundo Educação", "https://mundoeducacao.uol.com.br/gramatica/figuras-linguagem.htm", "Mundo Educação"),
     ],
   },
   {
@@ -235,7 +228,6 @@ O **diálogo entre textos**: quando um texto retoma, cita, reescreve ou alude a 
 **Como a banca cobra:** mostra um texto-fonte e um texto novo, pedindo a relação. Pergunte-se se o segundo **reforça** (paráfrase/citação) ou **inverte/ridiculariza** (paródia) o primeiro — e qual crítica ou efeito isso gera.`,
     links: [
       L("Intertextualidade — Brasil Escola", "https://brasilescola.uol.com.br/redacao/intertextualidade.htm", "Brasil Escola"),
-      L("Intertextualidade — Mundo Educação", "https://mundoeducacao.uol.com.br/gramatica/intertextualidade.htm", "Mundo Educação"),
     ],
   },
   {
@@ -256,8 +248,6 @@ As **seis funções** (Jakobson), cada uma ligada a um elemento da comunicação
 
 **Como a banca cobra:** um texto e a pergunta sobre a função **predominante**. Pergunte: o texto quer *informar* (referencial), *expressar o eu* (emotiva), *convencer o outro* (conativa), *manter contato* (fática), *explicar a língua* (metalinguística) ou *destacar a forma* (poética)? Anúncios combinam **conativa + poética**.`,
     links: [
-      L("Funções da linguagem — Brasil Escola", "https://brasilescola.uol.com.br/redacao/funcoes-linguagem.htm", "Brasil Escola"),
-      L("Funções da linguagem — Mundo Educação", "https://mundoeducacao.uol.com.br/gramatica/funcoes-linguagem.htm", "Mundo Educação"),
     ],
   },
   {
@@ -277,8 +267,6 @@ No ENEM, gramática cai **a serviço do sentido** — nunca como regra isolada.
 
 **Como a banca cobra:** "o conectivo X estabelece relação de…", "o pronome retoma…", "o efeito de sentido do termo…". A resposta certa explica **qual relação** o recurso cria no texto (causa, oposição, conclusão, retomada).`,
     links: [
-      L("Coesão e coerência — Mundo Educação", "https://mundoeducacao.uol.com.br/redacao/coesao-textual.htm", "Mundo Educação"),
-      L("Mecanismos de coesão — Brasil Escola", "https://brasilescola.uol.com.br/redacao/coesao-textual.htm", "Brasil Escola"),
     ],
   },
 ];

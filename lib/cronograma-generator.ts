@@ -10,6 +10,7 @@
 import { prisma } from "./prisma";
 import { stringifyJson } from "./json";
 import { ENEM_DIA_1 } from "./dates";
+import { getIdiomaAluno } from "./idioma";
 import { weeks, type WeekSeed, type WeekTaskSeed } from "../prisma/content/weeks";
 
 const MS_DIA = 86_400_000;
@@ -49,16 +50,18 @@ function mesclarBlocos(blocos: WeekSeed[]): { foco: string; tasks: WeekTaskSeed[
 
 /**
  * Recria as semanas de origem "sugerido" datadas a partir do tempo restante,
- * preservando as semanas criadas pelo usuário ("usuario"). Retorna quantas
- * semanas sugeridas foram geradas.
+ * preservando as semanas criadas pelo usuário ("usuario"). As tarefas marcadas
+ * com `idioma` só entram se casarem com o idioma escolhido pelo aluno. Retorna
+ * quantas semanas sugeridas foram geradas.
  */
 export async function regenerarCronograma(hoje: Date = new Date()): Promise<number> {
   // Mapas slug -> id (do banco), como no seed.
-  const [subjects, topics, books, exams] = await Promise.all([
+  const [subjects, topics, books, exams, idioma] = await Promise.all([
     prisma.subject.findMany({ select: { id: true, slug: true } }),
     prisma.topic.findMany({ select: { id: true, slug: true } }),
     prisma.book.findMany({ select: { id: true, slug: true } }),
     prisma.exam.findMany({ select: { id: true, slug: true } }),
+    getIdiomaAluno(),
   ]);
   const subjectIdBySlug = Object.fromEntries(subjects.map((s) => [s.slug, s.id]));
   const topicIdBySlug = Object.fromEntries(topics.map((t) => [t.slug, t.id]));
@@ -120,6 +123,8 @@ export async function regenerarCronograma(hoje: Date = new Date()): Promise<numb
 
     let ordem = 0;
     for (const task of tasks) {
+      // Língua estrangeira: só a tarefa do idioma que o aluno faz.
+      if (task.idioma && task.idioma !== idioma) continue;
       ordem++;
       await prisma.weekTask.create({
         data: {

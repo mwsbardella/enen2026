@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Md from "@/components/MarkdownClient";
 import { corDaArea, nomeDaArea, DISCIPLINE_TO_SUBJECT } from "@/lib/subjects";
 
 export type FormQuestion = {
@@ -31,14 +30,6 @@ type Resultado = {
   porArea: Record<string, { acertos: number; total: number }>;
   correcao: Correcao[];
 };
-
-function Md({ children }: { children: string }) {
-  return (
-    <div className="prose-enem">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
-    </div>
-  );
-}
 
 function fmt(s: number) {
   const m = Math.floor(s / 60);

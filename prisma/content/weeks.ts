@@ -26,6 +26,11 @@ export type WeekTaskSeed = {
   tipo: TaskTipo;
   subjectSlug?: string;
   ref: TaskRef;
+  /**
+   * Só para língua estrangeira: a tarefa entra no cronograma apenas de quem
+   * escolheu esse idioma (User.idioma). Sem o campo, vale para todo mundo.
+   */
+  idioma?: "ingles" | "espanhol";
 };
 
 export type WeekSeed = {
@@ -125,7 +130,9 @@ export const weeks: WeekSeed[] = [
     numero: 10,
     foco: "Língua estrangeira e Artes + Química orgânica",
     tasks: [
-      { titulo: "Ler: Língua estrangeira (Inglês e Espanhol)", tipo: "LER_MATERIAL", subjectSlug: "linguagens", ref: { kind: "material", slugs: ["lng-ingles", "lng-espanhol"] } },
+      // Uma tarefa por idioma: o aluno faz só um. O gerador descarta a do outro.
+      { titulo: "Ler: Língua estrangeira — Inglês", tipo: "LER_MATERIAL", subjectSlug: "linguagens", idioma: "ingles", ref: { kind: "material", slugs: ["lng-ingles"] } },
+      { titulo: "Ler: Língua estrangeira — Espanhol", tipo: "LER_MATERIAL", subjectSlug: "linguagens", idioma: "espanhol", ref: { kind: "material", slugs: ["lng-espanhol"] } },
       { titulo: "Ler: Artes e patrimônio cultural", tipo: "LER_MATERIAL", subjectSlug: "linguagens", ref: { kind: "material", slugs: ["lng-artes"] } },
       { titulo: "Ler: Química orgânica", tipo: "LER_MATERIAL", subjectSlug: "natureza", ref: { kind: "material", slugs: ["nat-organica"] } },
       { titulo: "Leitura: Iracema", tipo: "LER_LIVRO", ref: { kind: "book", slugs: ["iracema"] } },
