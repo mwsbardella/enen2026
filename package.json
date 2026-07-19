@@ -13,6 +13,7 @@
     "db:generate": "prisma generate",
     "db:reset": "prisma migrate reset --force",
     "db:seed": "tsx prisma/seed.ts",
+    "db:usar-pronto": "tsx scripts/usar-banco-pronto.ts",
     "import": "tsx scripts/import-enem.ts",
     "parse:inep": "tsx scripts/parse-inep-pdf.ts",
     "classify": "tsx scripts/classify-questions.ts",

@@ -44,10 +44,13 @@ next-env.d.ts
 *.db
 *.db-journal
 /prisma/dev.db
+# EXCEÇÃO: banco pronto (sem dados pessoais) versionado para quem clona rodar
+# na hora, sem precisar importar/classificar. Ver npm run db:usar-pronto.
+!/prisma/seed.db
 
-# enem assets baixados na importação (gerados, podem ser grandes)
-/public/enem-assets/*
-!/public/enem-assets/.gitkeep
+# imagens das questões (baixadas na importação, versionadas para o repo
+# funcionar 100% logo após o clone)
+!/public/enem-assets/
 
 # pacote portátil offline (gerado) e Node embutido baixado
 /dist-portable/
