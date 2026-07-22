@@ -7,6 +7,7 @@ const ITEMS = [
   { href: "/", label: "Início", icon: "🏠" },
   { href: "/cronograma", label: "Cronograma", icon: "🗓️" },
   { href: "/materiais", label: "Matérias", icon: "📚" },
+  { href: "/apoio", label: "Apoio", icon: "🧭" },
   { href: "/provas", label: "Provas", icon: "📝" },
   { href: "/literatura", label: "Literatura", icon: "📖" },
   { href: "/redacao", label: "Redação", icon: "✍️" },
@@ -53,7 +54,7 @@ export default function Nav() {
 
       {/* Barra inferior fixa (mobile) */}
       <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-surface/95 backdrop-blur md:hidden">
-        <ul className="mx-auto grid max-w-4xl grid-cols-7">
+        <ul className="mx-auto grid max-w-4xl grid-cols-8">
           {ITEMS.map((it) => (
             <li key={it.href}>
               <Link

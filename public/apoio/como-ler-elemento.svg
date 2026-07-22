@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="820" height="360" fill="#ffffff"/>
+  <text x="410" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#111">Como ler um elemento na tabela</text>
+
+  <!-- Célula ampliada do Sódio -->
+  <rect x="60" y="70" width="210" height="240" rx="14" fill="#F6A6A6" stroke="#333" stroke-width="2"/>
+  <text x="78" y="108" font-size="30" font-weight="700" fill="#111">11</text>
+  <text x="165" y="205" font-size="78" font-weight="800" text-anchor="middle" fill="#111">Na</text>
+  <text x="165" y="245" font-size="22" text-anchor="middle" fill="#222">Sódio</text>
+  <text x="165" y="292" font-size="28" font-weight="600" text-anchor="middle" fill="#111">22,99</text>
+
+  <!-- Conectores + rótulos -->
+  <g stroke="#c0392b" stroke-width="2" fill="none">
+    <path d="M110 100 H 430"/>
+    <path d="M235 180 H 430"/>
+    <path d="M235 236 H 430"/>
+    <path d="M235 288 H 430"/>
+  </g>
+  <g fill="#c0392b">
+    <circle cx="110" cy="100" r="4"/>
+    <circle cx="235" cy="180" r="4"/>
+    <circle cx="235" cy="236" r="4"/>
+    <circle cx="235" cy="288" r="4"/>
+  </g>
+
+  <text x="440" y="96" font-size="18" font-weight="700" fill="#111">Número atômico (Z)</text>
+  <text x="440" y="116" font-size="14" fill="#555">nº de prótons = nº de elétrons (átomo neutro)</text>
+
+  <text x="440" y="176" font-size="18" font-weight="700" fill="#111">Símbolo do elemento</text>
+  <text x="440" y="196" font-size="14" fill="#555">como ele aparece na tabela</text>
+
+  <text x="440" y="232" font-size="18" font-weight="700" fill="#111">Nome do elemento</text>
+
+  <text x="440" y="284" font-size="18" font-weight="700" fill="#111">Massa atômica (u)</text>
+  <text x="440" y="304" font-size="14" fill="#555">nêutrons ≈ massa − prótons ⇒ 23 − 11 = 12</text>
+</svg>
