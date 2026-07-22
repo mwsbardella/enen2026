@@ -79,7 +79,11 @@ export default function TopicQuestionItem({ q }: { q: StudyQuestion }) {
                 >
                   <span className="font-bold">{alt.letter}</span>
                   <span className="flex-1">
-                    <Md>{alt.text || "—"}</Md>
+                    {alt.text && <Md>{alt.text}</Md>}
+                    {alt.file && (
+                      <Md>{`![alternativa ${alt.letter}](${alt.file})`}</Md>
+                    )}
+                    {!alt.text && !alt.file && <span>—</span>}
                   </span>
                   {isCorreta && (
                     <span className="shrink-0 text-xs font-semibold text-success">

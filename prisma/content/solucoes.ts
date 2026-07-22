@@ -20,6 +20,21 @@ export type Solucao = {
 export const solucoes: Solucao[] = [
   {
     year: 2019,
+    index: 136,
+    resposta: "E",
+    markdown: `**Ideia:** "sol a pino ao meio-dia" quer dizer que os raios de luz descem **na vertical**. A sombra de um objeto no chão é então a sua **projeção ortogonal** — como se você olhasse a escultura **diretamente de cima** (vista superior). Nada de sombra esticada para o lado: cada ponto "cai" reto no solo.
+
+1. **O que a sombra mostra:** olhando a palavra PINE de cima, você vê o *contorno* de cada letra apoiado no chão, mantendo a **ordem P → I → N → E** e as **larguras relativas** (a barra fina do "I" continua fina; P, N e E são blocos mais largos).
+2. **A escultura está inclinada** em relação ao solo. Isso **comprime** o desenho na direção da inclinação (a sombra fica mais "achatada" que a palavra vista de frente), mas **não junta nem embaralha** as letras — os espaços entre elas continuam existindo.
+3. **Eliminando as erradas:**
+   - a que mostra **uma única barra preta** cheia junta tudo numa mancha só — perde a separação das letras.
+   - as que mostram **blocos todos do mesmo tamanho** ou em **posições trocadas** não respeitam a largura/ordem de P, I, N, E.
+4. **A alternativa E** é a única com quatro sombras separadas, na ordem certa e com o "I" mais estreito que as vizinhas — exatamente a vista de cima de PINE.
+
+**Resposta: E.** *Chave da questão: sol a pino = projeção ortogonal = vista de cima (não é sombra oblíqua esticada).*`,
+  },
+  {
+    year: 2019,
     index: 142,
     resposta: "E",
     markdown: `**Ideia:** a área a pavimentar é a diferença entre o círculo **novo** e o círculo **antigo** (uma "coroa"). Use π ≈ 3.

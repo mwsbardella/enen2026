@@ -191,7 +191,11 @@ export default function QuestionForm({
                     />
                     <span className="font-bold">{alt.letter}</span>
                     <span className="flex-1">
-                      <Md>{alt.text}</Md>
+                      {alt.text && <Md>{alt.text}</Md>}
+                      {alt.file && (
+                        <Md>{`![alternativa ${alt.letter}](${alt.file})`}</Md>
+                      )}
+                      {!alt.text && !alt.file && <span>—</span>}
                     </span>
                   </label>
                 );
