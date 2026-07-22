@@ -5,7 +5,9 @@ import RedacaoEditor from "@/components/RedacaoEditor";
 import CompetenciaGuide from "@/components/CompetenciaGuide";
 import RepertorioBank, { type Rep } from "@/components/RepertorioBank";
 import RedacoesPassadas from "@/components/RedacoesPassadas";
+import TemasProvaveis2026 from "@/components/TemasProvaveis2026";
 import { temasPassados, redacoesModelo } from "@/lib/temas-redacao-passados";
+import { temas2026 } from "@/lib/temas-redacao-2026";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +47,16 @@ export default async function RedacaoPage() {
           redações-modelo comentadas no padrão nota 1000.
         </p>
         <RedacoesPassadas temas={temasPassados} modelos={redacoesModelo} />
+      </section>
+
+      <section>
+        <h2 className="mb-2 text-lg font-bold">Temas prováveis 2026</h2>
+        <p className="mb-2 text-sm text-muted">
+          Previsões para a redação do ENEM 2026 (ninguém sabe o tema oficial),
+          escolhidas pelo padrão da banca. Cada uma traz tese, argumentos,
+          proposta de intervenção, repertórios e onde se aprofundar.
+        </p>
+        <TemasProvaveis2026 temas={temas2026} />
       </section>
 
       <section>
